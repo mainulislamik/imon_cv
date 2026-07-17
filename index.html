@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. Mainul Islam Imon - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .resume-container {
+            width: 210mm;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        }
+        .print-group { 
+            display: flex; 
+            border-right: 20px solid #dcb524;
+            min-height: 297mm;
+            box-sizing: border-box;
+        }
+        .print-group + .print-group { border-top: 4px solid #e0e0e0; }
+
+        @page { size: A4; margin: 0; }
+
+        @media print {
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            body { background: none; }
+            .resume-container { width: 100%; margin: 0; box-shadow: none; }
+            .print-group { min-height: 297mm; page-break-after: always; border-right: 20px solid #dcb524; }
+            .print-group + .print-group { border-top: none; }
+        }
+        
+        .left-column {
+            width: 35%; background-color: #4a4a4a; color: #fff; padding: 40px 30px;
+        }
+        .right-column {
+            width: 65%; padding: 50px 40px; background-color: #fff;
+        }
+        .profile-pic-container { text-align: center; margin-bottom: 40px; }
+        .profile-pic {
+            width: 180px; height: 200px; object-fit: cover; object-position: center top;
+            border-radius: 15px; background-color: #ddd;
+        }
+        .left-section { margin-bottom: 40px; }
+        .left-section h3 {
+            color: #fff; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .left-section h3 i { color: #dcb524; font-size: 1.5rem; }
+        .education-item { margin-bottom: 20px; font-size: 0.85rem; }
+        .education-item p { color: #ccc; }
+        .education-item .degree { color: #fff; font-weight: bold; }
+        .list-item {
+            font-size: 0.85rem; color: #ccc; margin-bottom: 5px; padding-left: 15px; position: relative;
+        }
+        .list-item::before { content: "\2022"; color: #dcb524; position: absolute; left: 0; font-weight: bold; }
+
+        .header h1 {
+            font-size: 2rem; color: #222; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;
+        }
+        .header h2 {
+            font-size: 1.3rem; color: #333; font-weight: normal; display: flex; align-items: center;
+        }
+        .header h2::before, .header h2::after { content: ""; flex: 1; border-bottom: 2px solid #555; margin: 0 15px; }
+        .header h2::before { margin-left: 0; }
+        .header h2::after { margin-right: 0; }
+
+        .contact-info { margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .contact-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
+        .contact-icon {
+            width: 30px; height: 30px; border: 1.5px solid #666; border-radius: 5px;
+            display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #333; flex-shrink: 0;
+        }
+
+        .right-section { margin-bottom: 40px; }
+        .right-section h3 {
+            font-size: 1.2rem; text-transform: uppercase; display: flex; align-items: center;
+            gap: 15px; margin-bottom: 20px;
+        }
+        .right-section h3 i { font-size: 1.5rem; color: #333; }
+        .right-section h3::after { content: ""; flex: 1; border-bottom: 1px solid #999; }
+        .objective-text { font-size: 0.85rem; text-align: justify; color: #444; }
+
+        .timeline { border-left: 2px solid #ccc; padding-left: 25px; margin-left: 10px; }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-icon {
+            position: absolute; left: -33px; top: 5px; width: 14px; height: 14px;
+            background-color: #666; border: 2px solid #dcb524;
+        }
+        .timeline-item h4 { font-size: 1.2rem; color: #222; margin-bottom: 5px; }
+
+        .promotion-track { margin: 15px 0; padding-left: 15px; border-left: 2px dashed #dcb524; }
+        .promo-role { position: relative; margin-bottom: 10px; font-size: 0.9rem; }
+        .promo-role::before { content: "\2022"; color: #dcb524; position: absolute; left: -21px; font-size: 1.4rem; top: -4px; }
+        .promo-role strong { color: #222; }
+        .promo-role span {
+            color: #555; font-size: 0.75rem; margin-left: 8px; background: #f0f0f0;
+            padding: 2px 8px; border-radius: 3px; font-weight: 600;
+        }
+        .promo-role.current strong { color: #dcb524; }
+
+        .job-sub-section { margin-top: 15px; margin-bottom: 10px; }
+        .job-sub-title {
+            font-size: 0.85rem; font-weight: bold; color: #4a4a4a;
+            border-bottom: 1px dashed #ccc; padding-bottom: 2px; margin-bottom: 8px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .timeline-item ul { list-style-type: none; padding: 0; margin-top: 5px; margin-bottom: 10px; }
+        .timeline-item ul li { font-size: 0.85rem; color: #444; margin-bottom: 6px; position: relative; padding-left: 15px; }
+        .timeline-item ul li::before { content: "\2022"; position: absolute; left: 0; color: #dcb524; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .print-group { flex-direction: column; border-right: none; border-bottom: 20px solid #dcb524; }
+            .print-group + .print-group { border-top: none; }
+            .left-column, .right-column { width: 100%; }
+            .contact-info { grid-template-columns: 1fr; }
+        }
+        
+        .export-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #dcb524;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .export-btn:hover {
+            background-color: #c9a420;
+        }
+        @media print {
+            .export-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<button id="export-btn" class="export-btn"><i class="fa-solid fa-download"></i> Export as JPG</button>
+
+<div class="resume-container">
+
+    <!-- PAGE 1 -->
+    <div class="print-group">
+        <div class="left-column">
+            <div class="profile-pic-container">
+                <img src="Gemini_Generated_Image_14fi9p14fi9p14fi.png" alt="Profile Picture" class="profile-pic">
+            </div>
+
+            <div class="left-section">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <div class="education-item">
+                    <p class="degree">Bachelor of Science in Computer Science and Engineering (CSE)</p>
+                    <p>Bangladesh University</p>
+                    <p>Expected Graduation: November 2026</p>
+                    <p>CGPA: 3.52 (Pursuing)</p>
+                </div>
+                <div class="education-item">
+                    <p class="degree">Diploma Engineering - Computer Technology</p>
+                    <p>Patuakhali Polytechnic Institute</p>
+                    <p>Board: Technical</p>
+                    <p>2018</p>
+                    <p>CGPA: 2.95</p>
+                </div>
+                <div class="education-item">
+                    <p class="degree">SSC- Science</p>
+                    <p>Bakerganj Model High School</p>
+                    <p>Board: Barishal</p>
+                    <p>2014</p>
+                    <p>GPA: 5.00</p>
+                </div>
+            </div>
+
+            <div class="left-section">
+                <h3><i class="fa-solid fa-gear"></i> Technical Skills</h3>
+                <div class="list-item">IT Infrastructure Management</div>
+                <div class="list-item">Windows Server Administration</div>
+                <div class="list-item">Linux Administration (RHCSA & RHCE)</div>
+                <div class="list-item">MTCNA (MikroTik Administration)</div>
+                <div class="list-item">CCNA (Cisco Networking)</div>
+                <div class="list-item">ERP & HRMS Support</div>
+                <div class="list-item">Server Installation, Configuration & Maintenance</div>
+                <div class="list-item">Virtualization, Backup & Disaster Recovery</div>
+                <div class="list-item">Cloud & Remote Support</div>
+                <div class="list-item">Web Hosting, DNS & Domain Management</div>
+                <div class="list-item">Cyber Security & Endpoint Protection</div>
+                <div class="list-item">CCTV, Access Control & Time Attendance Systems</div>
+                <div class="list-item">Technical Support & Hardware Troubleshooting</div>
+                <div class="list-item">IT Asset & License Management</div>
+                <div class="list-item">Synology NAS Administration</div>
+                <div class="list-item">ZKTeco Device Configuration</div>
+                <div class="list-item">PABX & IP-PBX Administration</div>
+                <div class="list-item">Public Address (PA) System Management</div>
+                <div class="list-item">Windows, Linux & macOS Administration</div>
+                <div class="list-item">AI-Based Software Development</div>
+                <div class="list-item">AI Workflow & Process Automation</div>
+                <div class="list-item">IT Budget Planning & Vendor Management</div>
+                <div class="list-item">Team Leadership & Project Coordination</div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="header">
+                <h1>MD. Mainul Islam Imon</h1>
+                <h2>IT SPECIALIST</h2>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <span>+8801881144992</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <span>mdmainulislamimon@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <span>linkedin.com/in/md-mainul-islam-imon</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <span>Mohammadpur, Dhaka-1207</span>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <h3><i class="fa-solid fa-user"></i> Professional Summary</h3>
+                <p class="objective-text">
+                    Highly motivated IT professional with 7+ years of experience in IT infrastructure, system administration, network management, technical support, and enterprise security. Experienced in Windows & Linux server administration, Active Directory, Microsoft 365, Google Workspace, MikroTik, Cisco networking, ERP/HRMS support, CCTV, access control, virtualization, backup solutions, and IT asset management. Adept at leading IT projects, managing vendors, implementing cybersecurity best practices, and delivering reliable technology solutions that improve business productivity and operational efficiency.
+                </p>
+            </div>
+
+            <div class="right-section">
+                <h3><i class="fa-solid fa-briefcase"></i> Professional Experience</h3>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"></div>
+                        <h4>Stencil Bangladesh Ltd. (Asiatic 360)</h4>
+
+                        <div class="promotion-track">
+                            <div class="promo-role current">
+                                <strong>Assistant Manager - IT</strong> <span>Jan 2026 - July 2026</span>
+                            </div>
+                            <div class="promo-role">
+                                <strong>Senior Executive - IT</strong> <span>Jan 2023 - Dec 2025</span>
+                            </div>
+                            <div class="promo-role">
+                                <strong>Executive - IT</strong> <span>Mar 2021 - Dec 2022</span>
+                            </div>
+                        </div>
+
+                        <div class="job-sub-section">
+                            <div class="job-sub-title">Core Systems, Hardware & Technical Support</div>
+                            <ul>
+                                <li><strong>End-User Support:</strong> Provide tier-3 on-site and remote technical support for complex workspace hardware, computer setups, and client profile faults.</li>
+                                <li><strong>OS & Software Support:</strong> Install, upgrade, and troubleshoot operating systems (Windows, Linux, macOS) alongside enterprise software applications.</li>
+                                <li><strong>Peripherals Management:</strong> Diagnose, resolve, and maintain network printing devices, heavy-duty laser/inkjet printers, scanners, and multi-office projector units.</li>
+                                <li><strong>Directory & File Sharing:</strong> Administer Active Directory (AD), Group Policies (GPO), DNS/DHCP configurations, and maintain secure local file-sharing networks and NAS servers.</li>
+                                <li><strong>Cloud Administration:</strong> Manage Google Workspace (G Suite) and Microsoft 365 environments, handling email provisioning, custom routing groups, and access security.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-sub-section">
+                            <div class="job-sub-title">Network, Security & Facilities Management</div>
+                            <ul>
+                                <li><strong>Network Routing:</strong> Configure and secure corporate LAN, WAN, VLAN segments, managed switches, routers, and edge firewall policies.</li>
+                                <li><strong>Power & UPS Planning:</strong> Map, configure, and maintain power backup infrastructure, including advanced Online UPS balancing, generator ties, and server room climate grids.</li>
+                                <li><strong>Endpoint Security:</strong> Deploy and manage centralized enterprise antivirus management servers to push automated real-time protection profiles across endpoints.</li>
+                                <li><strong>Web Security:</strong> Oversee corporate domains, hosting performance, SSL certifications, and critical email authentication maps (SPF, DKIM, DMARC).</li>
+                                <li><strong>CCTV Surveillance:</strong> Target, install, and manage storage layouts for analog and high-definition IP CCTV camera systems (DVR/NVR structures).</li>
+                                <li><strong>Biometrics Integration:</strong> Provision biometric attendance devices and access control fields, ensuring secure data synchronization into core HRMS and ERP tools.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="print-group">
+        <div class="left-column">
+            <div class="left-section">
+                <h3><i class="fa-solid fa-microchip"></i> Core Technologies</h3>
+                <div class="list-item">Windows 10/11</div>
+                <div class="list-item">Windows Server</div>
+                <div class="list-item">Linux (Red Hat/CentOS/Ubuntu)</div>
+                <div class="list-item">macOS</div>
+                <div class="list-item">Microsoft 365</div>
+                <div class="list-item">Google Workspace</div>
+                <div class="list-item">Synology NAS</div>
+                <div class="list-item">MikroTik RouterOS</div>
+                <div class="list-item">Cisco Networking</div>
+                <div class="list-item">ZKTeco</div>
+                <div class="list-item">CCTV (IP & Analog)</div>
+                <div class="list-item">PABX / IP-PBX</div>
+                <div class="list-item">VMware / Hyper-V</div>
+            </div>
+            
+            <div class="left-section">
+                <h3><i class="fa-solid fa-person-chalkboard"></i> Trainings</h3>
+                <div class="education-item">
+                    <p class="degree">NS1 Network Security Associate</p>
+                    <p>Institute: Fortinet</p>
+                    <p>Website: fortinet.com</p>
+                </div>
+                <div class="education-item">
+                    <p class="degree">NDG Linux Unhatched</p>
+                    <p>Institute: Cisco Networking Academy</p>
+                    <p>Website: learningnetwork.cisco.com</p>
+                </div>
+                <div class="education-item">
+                    <p class="degree">Windows Server Administration</p>
+                    <p>Institute: Creative IT Institute</p>
+                    <p>Address: House #7, Road #4, Dhanmondi, Dhaka-1205</p>
+                    <p>Website: creativeitinstitute.com</p>
+                </div>
+                <div class="education-item">
+                    <p class="degree">Red Hat Linux Administration</p>
+                    <p>Institute: CSL Training</p>
+                    <p>Address: 2/2 (2nd Floor), Block-A, Lalmatia, Dhaka-1207</p>
+                    <p>Website: csltraining.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="right-section">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"></div>
+                        <div class="job-sub-section">
+                            <div class="job-sub-title">Applications, Procurement & Operations</div>
+                            <ul>
+                                <li><strong>ERP Application Support:</strong> Provide high-tier technical support for business systems (HRMS and Production) and coordinate software custom upgrades with developers.</li>
+                                <li><strong>Vendor & Procurement:</strong> Evaluate technical hardware/software requirements, manage vendor product quotations, handle installations, and maintain annual maintenance contracts (AMCs).</li>
+                                <li><strong>Asset Tracking:</strong> Control full IT asset tagging, inventory stocks, licensing compliance records, and hardware lifecycle distributions.</li>
+                                <li><strong>Technical Onboarding:</strong> Draft standard manuals, user SOPs, and run active training workshops focusing on cybersecurity, office IT rules, and workspace collaboration apps.</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-sub-section">
+                            <div class="job-sub-title">Infrastructure Setup & Office Relocation</div>
+                            <ul>
+                                <li><strong>Project Shifting:</strong> Lead end-to-end IT infrastructure relocation pipelines, managing dismantling, safe transit, deployment, and testing with minimum downtime.</li>
+                                <li><strong>Structured Layouts:</strong> Plan network layouts, structured LAN cabling matrices, fiber backbone drops, patch panels, and server rack deployments following industry best practices.</li>
+                                <li><strong>Server Room Staging:</strong> Establish clean communication rooms with organized rack placement, cable channels, and integrated environmental health sensors.</li>
+                                <li><strong>ISP Redundant Connections:</strong> Coordinate with architectural engineering groups and ISPs to setup leased line drops, load balancing, failovers, and remote VPN connections.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon"></div>
+                        <h4>Ahsania E Solutions (Dhaka Ahsania Mission)</h4>
+                        <div class="promotion-track">
+                            <div class="promo-role">
+                                <strong>IT Executive</strong> <span>May 2019 - Mar 2021</span>
+                            </div>
+                        </div>
+
+                        <div class="job-sub-section">
+                            <div class="job-sub-title">Strategic & Infrastructure Management</div>
+                            <ul>
+                                <li>Developing and executing strategic IT plans aligned with organizational business goals.</li>
+                                <li>Leading and managing IT infrastructure, networking systems, and technical operations.</li>
+                                <li>Managing IT budgets, vendor communication, procurement, and IT asset inventory.</li>
+                                <li>Providing technical leadership and support to junior IT team members.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="print-group">
+        <div class="left-column">
+            <div class="left-section">
+                <!-- Trainings continued without heading -->
+                <div class="education-item">
+                    <p class="degree">MTCNA (MikroTik Certified Network Associate)</p>
+                    <p>Institute: CSL Training</p>
+                    <p>Address: 2/2 (2nd Floor), Block-A, Lalmatia, Dhaka-1207</p>
+                    <p>Website: csltraining.com</p>
+                </div>
+                <div class="education-item">
+                    <p class="degree">CCNA (Routing & Switching)</p>
+                    <p>Institute: CSL Training</p>
+                    <p>Address: 2/2 (2nd Floor), Block-A, Lalmatia, Dhaka-1207</p>
+                    <p>Website: csltraining.com</p>
+                </div>
+                <div class="education-item">
+                    <p class="degree">Basic Networking</p>
+                    <p>Institute: Global Information & Technology (GIT)</p>
+                    <p>Address: Suite-208, Floor-8, Mukta Bangla Shopping Complex, Mirpur-1, Dhaka</p>
+                </div>
+            </div>
+
+            <div class="left-section">
+                <h3><i class="fa-solid fa-language"></i> Languages</h3>
+                <div class="list-item">Bangla - Native</div>
+                <div class="list-item">English - Professional</div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="right-section">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"></div>
+                        <div class="job-sub-section">
+                            <div class="job-sub-title">Technical Operations & Support</div>
+                            <ul>
+                                <li>Troubleshooting computer hardware, software, server, and networking-related issues.</li>
+                                <li>Managing Windows Server, Linux Server, MikroTik Router, VPN, Firewall, and Wi-Fi infrastructure.</li>
+                                <li>Monitoring and maintaining CCTV systems, access control systems, and security infrastructure.</li>
+                                <li>Implementing cybersecurity best practices, backup systems, and disaster recovery planning.</li>
+                                <li>Providing remote desktop support and helpdesk assistance to end-users.</li>
+                                <li>Managing user accounts, permissions, and access controls in Active Directory.</li>
+                                <li>Configuring and maintaining network printers, scanners, and other peripherals.</li>
+                                <li>Documenting technical procedures, system configurations, and troubleshooting guides.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+    document.getElementById('export-btn').addEventListener('click', function() {
+        const element = document.querySelector('.resume-container');
+        const btn = this;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Exporting...';
+        btn.disabled = true;
+        
+        html2canvas(element, { scale: 2, useCORS: true }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = 'resume.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.9);
+            link.click();
+            
+            btn.innerHTML = '<i class="fa-solid fa-download"></i> Export as JPG';
+            btn.disabled = false;
+        }).catch(err => {
+            console.error('Export failed:', err);
+            btn.innerHTML = '<i class="fa-solid fa-download"></i> Export as JPG';
+            btn.disabled = false;
+            alert('Failed to export image.');
+        });
+    });
+</script>
+
+</body>
+</html>
