@@ -32,7 +32,7 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background-color: #475569;
       color: var(--text-body);
-      font-size: 13px;
+      font-size: 12.8px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       padding: 30px 0;
@@ -61,7 +61,7 @@
       overflow: hidden;
       page-break-after: always;
       page-break-inside: avoid;
-      padding: 36px 42px 30px 42px;
+      padding: 30px 40px 22px 40px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -82,8 +82,8 @@
       justify-content: space-between;
       align-items: flex-start;
       border-bottom: 2.5px solid var(--primary);
-      padding-bottom: 16px;
-      margin-bottom: 16px;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
       gap: 20px;
     }
 
@@ -170,7 +170,7 @@
 
     /* ================= SECTION HEADINGS ================= */
     .section-block {
-      margin-bottom: 14px;
+      margin-bottom: 13px;
     }
 
     .section-header {
@@ -182,15 +182,15 @@
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: var(--primary-dark);
-      margin-bottom: 8px;
+      margin-bottom: 7px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    /* Career Objective & Summary */
+    /* Career Objective */
     .objective-text {
-      font-size: 12.5px;
+      font-size: 12.2px;
       line-height: 1.55;
       color: var(--text-body);
       text-align: justify;
@@ -200,9 +200,9 @@
       color: var(--text-main);
     }
 
-    /* ================= EMPLOYMENT HISTORY ================= */
+    /* ================= WORK EXPERIENCE ================= */
     .job-card {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .job-card:last-child {
@@ -213,11 +213,11 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     .job-company {
-      font-size: 14px;
+      font-size: 13.8px;
       font-weight: 800;
       color: var(--primary-dark);
     }
@@ -231,10 +231,10 @@
     .job-designations {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px 10px;
+      gap: 4px 8px;
       margin-bottom: 6px;
       background: var(--bg-light);
-      padding: 4px 8px;
+      padding: 3.5px 8px;
       border: 1px solid var(--border-light);
       border-radius: 4px;
     }
@@ -248,54 +248,38 @@
     .desig-date {
       color: var(--text-muted);
       font-weight: 500;
-      font-size: 11px;
+      font-size: 10.8px;
     }
 
-    .duty-subgroup {
-      margin-top: 5px;
-      margin-bottom: 5px;
+    /* BD Numbered Functional Sections */
+    .cat-group {
+      margin-bottom: 6px;
     }
 
-    .duty-title {
-      font-size: 11.5px;
+    .cat-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .cat-title {
+      font-size: 11.8px;
       font-weight: 800;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      margin-bottom: 3px;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
     }
 
-    .duty-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 3.5px;
-    }
-
-    .duty-list li {
-      position: relative;
-      padding-left: 14px;
+    .cat-text {
       font-size: 12px;
-      line-height: 1.45;
+      line-height: 1.48;
       color: var(--text-body);
       text-align: justify;
     }
 
-    .duty-list li::before {
-      content: "▪";
-      position: absolute;
-      left: 2px;
-      top: -1px;
-      color: var(--primary);
-      font-size: 12px;
-    }
-
-    .duty-list li strong {
+    .cat-text strong {
       color: var(--text-main);
-      font-weight: 700;
+      font-weight: 600;
     }
 
-    /* ================= TABLES (ACADEMIC / PERSONAL) ================= */
+    /* ================= TABLES ================= */
     .cv-table {
       width: 100%;
       border-collapse: collapse;
@@ -305,7 +289,7 @@
 
     .cv-table th, .cv-table td {
       border: 1px solid var(--border-color);
-      padding: 5.5px 8px;
+      padding: 5px 8px;
       text-align: left;
       vertical-align: middle;
     }
@@ -323,11 +307,12 @@
       color: var(--text-main);
     }
 
-    /* Skills Table / Grid */
+    /* Skills Table */
     .skills-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 12px;
+      margin-top: 4px;
     }
 
     .skills-table td {
@@ -346,19 +331,20 @@
 
     .skills-val {
       color: var(--text-body);
-      line-height: 1.4;
+      line-height: 1.42;
     }
 
-    /* Personal Info Grid */
+    /* Personal Particulars Table */
     .personal-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 12px;
+      font-size: 11.5px;
+      margin-top: 3px;
     }
 
     .personal-table td {
       border: 1px solid var(--border-color);
-      padding: 5px 8px;
+      padding: 4px 7px;
       vertical-align: middle;
     }
 
@@ -367,7 +353,7 @@
       background: var(--bg-light);
       font-weight: 700;
       color: var(--text-main);
-      font-size: 11.5px;
+      font-size: 11.2px;
     }
 
     .p-val {
@@ -379,57 +365,57 @@
     .ref-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 4px;
+      gap: 12px;
+      margin-top: 3px;
     }
 
     .ref-box {
       border: 1px solid var(--border-color);
       background: var(--bg-light);
       border-top: 3px solid var(--primary);
-      padding: 8px 12px;
+      padding: 6px 10px;
       border-radius: 3px;
     }
 
     .ref-box-name {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 800;
       color: var(--primary-dark);
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .ref-box-desig {
-      font-size: 11.5px;
+      font-size: 11.2px;
       font-weight: 700;
       color: var(--primary);
     }
 
     .ref-box-org {
-      font-size: 11px;
+      font-size: 10.8px;
       font-weight: 600;
       color: var(--text-muted);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .ref-box-contact {
-      font-size: 11px;
+      font-size: 10.8px;
       color: var(--text-body);
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
     /* Declaration */
     .declaration-box {
-      margin-top: 10px;
+      margin-top: 6px;
       border-top: 1px solid var(--border-color);
-      padding-top: 8px;
+      padding-top: 5px;
     }
 
     .declaration-text {
-      font-size: 11.5px;
-      line-height: 1.45;
+      font-size: 11.2px;
+      line-height: 1.35;
       color: var(--text-body);
       text-align: justify;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
       font-style: italic;
     }
 
@@ -446,10 +432,10 @@
     }
 
     .sig-img {
-      height: 42px;
-      max-width: 170px;
+      height: 40px;
+      max-width: 165px;
       object-fit: contain;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       display: block;
     }
 
@@ -477,12 +463,12 @@
       font-size: 10px;
       color: var(--text-muted);
       border-top: 1px solid var(--border-light);
-      padding-top: 6px;
+      padding-top: 5px;
       font-weight: 500;
       margin-top: auto;
     }
 
-    /* Print Formatting */
+    /* Print Styles */
     @media print {
       body {
         background: transparent !important;
@@ -499,7 +485,7 @@
         width: 210mm !important;
         height: 297mm !important;
         max-height: 297mm !important;
-        padding: 30px 38px 24px 38px !important;
+        padding: 24px 36px 18px 36px !important;
       }
     }
 
@@ -555,13 +541,13 @@
       <section class="section-block">
         <div class="section-header">Career Objective &amp; Executive Summary</div>
         <p class="objective-text">
-          Dedicated and results-driven <strong>IT Specialist &amp; System Administrator</strong> with <strong>7+ years of progressive enterprise experience</strong> in architecting, managing, and securing enterprise IT infrastructure, server environments, and corporate networking systems. Proven leadership track record advancing from Executive to <strong>Assistant Manager — IT</strong> at <strong>Stencil Bangladesh Ltd. (Asiatic 360)</strong>. Seeking to leverage comprehensive expertise in Windows &amp; Linux server administration, MikroTik/Cisco enterprise networking, Microsoft 365 &amp; Google Workspace cloud governance, Synology NAS storage architecture, and biometric ERP integration to drive high-availability operations, data security, and digital transformation for a forward-thinking organization.
+          Dedicated and results-oriented <strong>IT Specialist &amp; System Administrator</strong> with <strong>7+ years of progressive enterprise experience</strong> in managing, securing, and optimizing corporate IT infrastructure, server systems, and business network operations. Proven track record advancing from Executive to <strong>Assistant Manager — IT</strong> at <strong>Stencil Bangladesh Ltd. (Asiatic 360)</strong>. Seeking a leadership role to leverage core competencies in Windows/Linux server administration, MikroTik/Cisco network architecture, Microsoft 365/Google Workspace administration, hardware troubleshooting (Level-3), biometric attendance &amp; ERP software support, and IT procurement to enhance organizational productivity and ensure 99.9% operational uptime.
         </p>
       </section>
 
-      <!-- Professional Experience (Company 1) -->
+      <!-- Employment History (Company 1) -->
       <section class="section-block" style="margin-bottom: 0;">
-        <div class="section-header">Work Experience</div>
+        <div class="section-header">Employment History / Work Experience</div>
 
         <div class="job-card">
           <div class="job-top">
@@ -577,31 +563,28 @@
             <span class="desig-badge">Executive — IT <span class="desig-date">(Mar 2021 – Dec 2022)</span></span>
           </div>
 
-          <div class="duty-subgroup">
-            <div class="duty-title">1. Server, Virtualization &amp; Storage Administration</div>
-            <ul class="duty-list">
-              <li>Architected, installed, and managed Windows Server (2016/2019/2022) and Linux (RHEL/CentOS/Ubuntu) servers deployed on <strong>VMware ESXi and Hyper-V</strong> virtualization platforms, achieving <strong>99.9% uptime</strong> across corporate environments.</li>
-              <li>Configured and administered <strong>Active Directory Domain Services (AD DS)</strong>, Group Policy Objects (GPOs), DNS, DHCP, and role-based access control (RBAC) to enforce centralized endpoint security and user governance.</li>
-              <li>Engineered high-capacity <strong>Synology NAS storage clusters</strong> with automated RAID configurations, snapshot replication, and off-site backup schedules to ensure strict Disaster Recovery (DR) and business continuity compliance.</li>
-            </ul>
+          <!-- BD Standard Numbered Duties -->
+          <div class="cat-group">
+            <div class="cat-title">1. Diagnosing and Troubleshooting:</div>
+            <p class="cat-text">
+              Providing Level-3 desktop and workstation support, anti-virus server management, corporate network support, data communications, internet connectivity, and email administration. Troubleshooting hardware, OS, and client software problems; delivering instant technical solutions via on-site visits, remote desktop, and phone support. Performing regular automated data backups, system security patching, and OS maintenance.
+            </p>
           </div>
 
-          <div class="duty-subgroup">
-            <div class="duty-title">2. Enterprise Networking, Routing &amp; Security</div>
-            <ul class="duty-list">
-              <li>Designed, configured, and secured multi-VLAN corporate LAN/WAN architectures utilizing <strong>MikroTik RouterOS and Cisco managed switches</strong> with dedicated IP subnets for corporate, guest, and management tiers.</li>
-              <li>Implemented dual-ISP redundant leased lines with policy-based routing (PBR), bandwidth management, quality of service (QoS), and automated failover to guarantee uninterrupted internet connectivity.</li>
-              <li>Configured edge firewall rules, NAT, IPsec site-to-site VPNs, and OpenVPN remote access solutions for secure telecommuting.</li>
-            </ul>
+          <div class="cat-group">
+            <div class="cat-title">2. Installation and Configuration:</div>
+            <p class="cat-text">
+              Configuring corporate user email clients via Microsoft Outlook, Microsoft 365, and Google Workspace. Managing, configuring, and troubleshooting LAN, WAN, and VLAN environments using <strong>MikroTik RouterOS and Cisco switches</strong>. Installing, configuring, and servicing Network printers, heavy-duty Laser printers, Inkjet printers, POS &amp; Label printers, and multi-office Projectors and Scanners. Configuring Wi-Fi Access Points, Router gateways, NVR, DVR, XVR, and IP/Analog CCTV surveillance cameras. Installing and maintaining Windows Server (2016/2019/2022), Linux (RHEL/CentOS/Ubuntu), and Hyper-V/VMware virtual machines.
+            </p>
           </div>
 
-          <div class="duty-subgroup">
-            <div class="duty-title">3. Cloud Administration &amp; SaaS Governance</div>
-            <ul class="duty-list">
-              <li>Administered enterprise <strong>Microsoft 365 and Google Workspace</strong> tenants, managing user mailboxes, custom distribution groups, shared drives, and security policies (MFA, Conditional Access).</li>
-              <li>Managed corporate domain portfolios, public DNS zone records, SSL/TLS certificates, and email security protocols (SPF, DKIM, DMARC) to maintain 100% email deliverability and prevent spoofing.</li>
-            </ul>
+          <div class="cat-group">
+            <div class="cat-title">3. Repair and Maintenance:</div>
+            <p class="cat-text">
+              Repairing, assembling, and replacing damaged hardware components across desktop computers and laptops (<strong>Level-3 troubleshooting</strong>). Maintaining and servicing peripheral devices including laser/inkjet printers, scanners, monitors, and online UPS power backup systems. Performing periodic hardware upgrades, performance tuning, preventive maintenance, and server room climate monitoring to prevent hardware failures.
+            </p>
           </div>
+
         </div>
       </section>
 
@@ -623,35 +606,37 @@
 
       <!-- Stencil Bangladesh Ltd. Continued -->
       <section class="section-block">
-        <div class="section-header">Work Experience (Continued)</div>
+        <div class="section-header">Employment History (Continued)</div>
 
         <div class="job-card">
           <div class="job-top">
             <div class="job-company">Stencil Bangladesh Ltd. (Asiatic 360) — <span style="font-weight: 500; font-size: 12px; color: var(--text-muted);">Continued</span></div>
           </div>
 
-          <div class="duty-subgroup">
-            <div class="duty-title">4. Security Systems, Surveillance &amp; Biometrics Integration</div>
-            <ul class="duty-list">
-              <li>Integrated <strong>ZKTeco biometric attendance &amp; access control devices</strong> directly with corporate ERP/HRMS databases, automating daily punch logs and reducing payroll processing time by 40%.</li>
-              <li>Installed, configured, and maintained multi-channel high-definition IP CCTV camera systems (NVR/DVR) with optimized storage retention policies and remote mobile monitoring.</li>
-              <li>Deployed enterprise endpoint antivirus solutions with centralized management consoles to push real-time malware protection and definitions across 150+ user workstations.</li>
-            </ul>
+          <div class="cat-group">
+            <div class="cat-title">4. Technical &amp; ERP Software Support:</div>
+            <p class="cat-text">
+              Providing comprehensive on-site and remote technical support for enterprise <strong>ERP, HRM, and Payroll software</strong>. Managing and synchronizing employee biometric attendance records, job cards, pay slips, and financial transactions using ERP systems. Integrating <strong>ZKTeco biometric terminals</strong> with internal database servers. Assisting end-users with software setups, video conference meetings (Microsoft Teams, Zoom), and conducting IT orientation and cybersecurity awareness training.
+            </p>
           </div>
 
-          <div class="duty-subgroup">
-            <div class="duty-title">5. IT Infrastructure Shifting, Server Room Staging &amp; Operations</div>
-            <ul class="duty-list">
-              <li>Successfully spearheaded complete corporate office IT relocation: planned structured CAT6/Fiber cabling matrices, patch panels, 42U server rack staging, online UPS power distribution, and ISP line migration with <strong>zero data loss</strong>.</li>
-              <li>Managed corporate IT asset inventory tagging, hardware lifecycle tracking, and software license compliance audits.</li>
-              <li>Supervised vendor negotiations, procurement quotation evaluations, and Annual Maintenance Contracts (AMCs), reducing annual departmental operational costs by ~15%.</li>
-              <li>Provided tier-3 escalation technical support for cross-platform workstations (Windows, Linux, macOS), network printers, scanners, conference audio-visual systems, and IP-PBX communication networks.</li>
-            </ul>
+          <div class="cat-group">
+            <div class="cat-title">5. Documentation, Inventory &amp; Reporting:</div>
+            <p class="cat-text">
+              Managing service-related spare parts inventory store, hardware tagging, and stock distribution. Maintaining IT asset logs, software license compliance, and Annual Maintenance Contracts (AMCs). Preparing and presenting daily, weekly, and monthly IT service and spare parts maintenance reports to the Department Head (HOD) and executive management.
+            </p>
+          </div>
+
+          <div class="cat-group">
+            <div class="cat-title">6. IT Infrastructure Setup &amp; Office Relocation Projects:</div>
+            <p class="cat-text">
+              Successfully spearheaded corporate office IT relocation: planned structured CAT6 and fiber-optic cabling matrices, 42U server rack staging, patch panel termination, online UPS power grids, and ISP line migration with <strong>zero data loss and uninterrupted business operations</strong>.
+            </p>
           </div>
         </div>
 
         <!-- Company 2: Ahsania E Solutions -->
-        <div class="job-card" style="margin-top: 12px;">
+        <div class="job-card" style="margin-top: 10px;">
           <div class="job-top">
             <div class="job-company">Ahsania E Solutions (Dhaka Ahsania Mission)</div>
             <div class="job-location-duration">Dhaka, Bangladesh &bull; May 2019 – Mar 2021 (2 Years)</div>
@@ -661,42 +646,39 @@
             <span class="desig-badge">IT Executive</span>
           </div>
 
-          <div class="duty-subgroup">
-            <div class="duty-title">Key Responsibilities &amp; Operations</div>
-            <ul class="duty-list">
-              <li>Administered on-premises Windows Server and Linux environments, managing Active Directory user accounts, shared folder permissions, and routine backup schedules.</li>
-              <li>Maintained corporate LAN/WAN connectivity, MikroTik edge router configurations, Wi-Fi access points, and office-wide firewall policies.</li>
-              <li>Monitored and maintained facility CCTV surveillance, biometric time-attendance readers, PABX intercom systems, and server room equipment.</li>
-              <li>Delivered prompt on-site and remote IT helpdesk support, troubleshooting hardware, operating systems, and office application issues for internal staff; authored IT standard operating procedures (SOPs).</li>
-            </ul>
+          <div class="cat-group">
+            <div class="cat-title">Key Duties and Responsibilities:</div>
+            <p class="cat-text">
+              Administered Windows and Linux server platforms, Active Directory user accounts, and routine server backup schedules. Configured and maintained MikroTik routers, office LAN/WAN, Wi-Fi networks, firewall rules, and IP CCTV surveillance systems. Provided technical support for computer hardware, printers, scanners, and PABX intercom systems. Managed IT equipment inventory and authored standard troubleshooting documentation.
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- Technical Skills Matrix -->
+      <!-- Technical Skills Matrix Table -->
       <section class="section-block" style="margin-bottom: 0;">
         <div class="section-header">Technical Skills &amp; Area of Expertise</div>
 
         <table class="skills-table">
           <tr>
-            <td class="skills-cat">Server &amp; Virtualization</td>
-            <td class="skills-val">Windows Server (2016-2022), Linux (RHEL, CentOS, Ubuntu), VMware ESXi, Microsoft Hyper-V, Synology NAS (DSM, RAID arrays), Active Directory (AD DS, GPO, DNS, DHCP)</td>
+            <td class="skills-cat">Operating Systems &amp; Servers</td>
+            <td class="skills-val">Windows Server (2016-2022), Linux (Red Hat Enterprise Linux, CentOS, Ubuntu), Windows 10/11, macOS, VMware ESXi, Microsoft Hyper-V, Synology NAS (DSM, RAID)</td>
           </tr>
           <tr>
             <td class="skills-cat">Networking &amp; Security</td>
-            <td class="skills-val">MikroTik RouterOS (MTCNA), Cisco Switching &amp; Routing (CCNA), VLAN Segmentation, Edge Firewalls, IPsec/OpenVPN, Multi-ISP BGP/OSPF Redundancy &amp; Bandwidth Management</td>
+            <td class="skills-val">MikroTik RouterOS (MTCNA), Cisco Switching &amp; Routing (CCNA), VLAN, Bandwidth Management, Dual-ISP Redundancy, Firewall Policies, IPsec VPN, OpenVPN</td>
           </tr>
           <tr>
-            <td class="skills-cat">Cloud &amp; Collaboration</td>
-            <td class="skills-val">Microsoft 365 Administration, Google Workspace Admin, Domain Management, Web Hosting, SSL/TLS Certificates, Email Security &amp; Deliverability (SPF, DKIM, DMARC)</td>
+            <td class="skills-cat">Directory, Cloud &amp; Mail</td>
+            <td class="skills-val">Active Directory (AD DS, GPO, DNS, DHCP), Microsoft 365 Admin, Google Workspace, MS Outlook Configuration, Domain Management, Web Hosting, SSL, SPF/DKIM/DMARC</td>
           </tr>
           <tr>
-            <td class="skills-cat">Security &amp; Hardware</td>
-            <td class="skills-val">ZKTeco Biometric Time &amp; Access Control, IP CCTV Systems (DVR/NVR), Enterprise Antivirus Server, PABX / IP-PBX, Online UPS Power Balancing, Network Cabling &amp; Patch Panels</td>
+            <td class="skills-cat">Security &amp; Hardware Support</td>
+            <td class="skills-val">Level-3 Desktop/Laptop Repair, ZKTeco Biometric Time Attendance &amp; Access Control, IP &amp; Analog CCTV (NVR/DVR/XVR), Network/Laser Printers, Projectors, Scanners, PABX, UPS</td>
           </tr>
           <tr>
-            <td class="skills-cat">IT Management &amp; Ops</td>
-            <td class="skills-val">ERP/HRMS Technical Support, IT Asset Tagging &amp; Inventory Management, Vendor Negotiation, AMC Governance, Budget Planning, Team Supervision, Standard Operating Procedures (SOP)</td>
+            <td class="skills-cat">Software &amp; IT Management</td>
+            <td class="skills-val">ERP/HRM &amp; Payroll Software Support, IT Asset Tagging &amp; Inventory Management, Vendor Negotiation, AMC Maintenance, Spare Parts Store, SOP Documentation &amp; HOD Reporting</td>
           </tr>
         </table>
       </section>
