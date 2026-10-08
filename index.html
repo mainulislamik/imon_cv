@@ -6,7 +6,7 @@
   <title>Curriculum Vitae of MD. Mainul Islam Imon — IT Specialist & System Administrator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -32,22 +32,18 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background-color: #475569;
       color: var(--text-body);
-      font-size: 12.8px;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.45;
+      font-size: 11.5px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
       padding: 30px 0;
-    }
-
-    h1, h2, h3, h4, .heading {
-      font-family: 'Plus Jakarta Sans', 'Inter', Arial, sans-serif;
-      color: var(--text-main);
     }
 
     .cv-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 25px;
+      gap: 30px;
     }
 
     .cv-page {
@@ -61,303 +57,272 @@
       overflow: hidden;
       page-break-after: always;
       page-break-inside: avoid;
-      padding: 30px 40px 22px 40px;
+      padding: 32px 38px 24px 38px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       box-sizing: border-box;
     }
 
-    .cv-page:last-child {
-      page-break-after: avoid;
-    }
-
-    .page-content {
+    .page-body {
       flex: 1;
-    }
-
-    /* ================= HEADER SECTION ================= */
-    .cv-header {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    /* Page 1 body layout */
+    .page-1-body {
+      gap: 12px;
+    }
+
+    /* Page 2 body layout */
+    .page-2-body {
+      gap: 7px;
+    }
+
+    /* Header */
+    .header-table {
+      width: 100%;
       border-bottom: 2.5px solid var(--primary);
-      padding-bottom: 15px;
-      margin-bottom: 15px;
-      gap: 20px;
+      padding-bottom: 12px;
+      margin-bottom: 2px;
     }
 
-    .header-main {
-      flex: 1;
+    .header-left {
+      vertical-align: top;
+      width: 75%;
     }
 
-    .cv-doc-title {
+    .cv-main-title {
       font-size: 11px;
       font-weight: 800;
-      color: var(--primary-accent);
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      color: var(--primary);
+      margin-bottom: 2px;
     }
 
     .candidate-name {
-      font-size: 26px;
-      font-weight: 800;
+      font-size: 23px;
+      font-weight: 900;
       color: var(--primary-dark);
       letter-spacing: -0.3px;
       line-height: 1.15;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .candidate-designation {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 10px;
+      color: var(--primary-accent);
+      margin-bottom: 8px;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 4px 14px;
-      font-size: 12px;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 3px;
+      column-gap: 12px;
+      font-size: 11.2px;
       color: var(--text-body);
-      font-weight: 500;
     }
 
-    .contact-row {
+    .contact-item {
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .contact-row svg {
+    .contact-item svg {
       width: 13px;
       height: 13px;
-      stroke: var(--primary);
-      stroke-width: 2.2;
+      color: var(--primary);
       flex-shrink: 0;
     }
 
-    .contact-row a {
+    .contact-item a {
       color: inherit;
       text-decoration: none;
     }
 
-    .contact-row a:hover {
-      color: var(--primary-accent);
-      text-decoration: underline;
+    .header-right {
+      vertical-align: top;
+      width: 25%;
+      text-align: right;
     }
 
-    .photo-box {
-      width: 95px;
-      height: 115px;
-      border: 2px solid var(--border-color);
+    .photo-wrapper {
+      display: inline-block;
+      width: 110px;
+      height: 130px;
+      border: 2px solid var(--primary);
+      padding: 3px;
+      background: #ffffff;
       border-radius: 4px;
-      overflow: hidden;
-      flex-shrink: 0;
-      background: #f1f5f9;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
-    .photo-box img {
+    .photo-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
       display: block;
+      border-radius: 2px;
     }
 
-    /* ================= SECTION HEADINGS ================= */
-    .section-block {
-      margin-bottom: 13px;
-    }
-
-    .section-header {
-      background: var(--table-header-bg);
-      border-left: 4.5px solid var(--primary);
-      padding: 4px 10px;
+    /* Section Styling */
+    .section-title {
       font-size: 12.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: var(--primary-dark);
+      background: var(--table-header-bg);
+      border-left: 4.5px solid var(--primary);
+      padding: 5px 10px;
       margin-bottom: 7px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    /* Career Objective */
+    /* Career Objective Box */
     .objective-text {
-      font-size: 12.2px;
-      line-height: 1.55;
+      font-size: 11.2px;
+      line-height: 1.5;
       color: var(--text-body);
       text-align: justify;
+      background: var(--bg-light);
+      padding: 9px 13px;
+      border-left: 3px solid var(--primary-accent);
+      border-radius: 0 4px 4px 0;
     }
 
-    .objective-text strong {
-      color: var(--text-main);
+    /* Job Card / Organization */
+    .org-card {
+      margin-bottom: 2px;
     }
 
-    /* ================= WORK EXPERIENCE ================= */
-    .job-card {
-      margin-bottom: 10px;
-    }
-
-    .job-card:last-child {
-      margin-bottom: 0;
-    }
-
-    .job-top {
+    .org-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 3px;
+      border-bottom: 1.5px solid var(--border-color);
+      padding-bottom: 3px;
+      margin-bottom: 4px;
     }
 
-    .job-company {
-      font-size: 13.8px;
+    .org-name {
+      font-size: 13.5px;
       font-weight: 800;
       color: var(--primary-dark);
     }
 
-    .job-location-duration {
-      font-size: 11.5px;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .job-designations {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px 8px;
-      margin-bottom: 6px;
-      background: var(--bg-light);
-      padding: 3.5px 8px;
-      border: 1px solid var(--border-light);
-      border-radius: 4px;
-    }
-
-    .desig-badge {
-      font-size: 11.5px;
+    .org-location-date {
+      font-size: 11.2px;
       font-weight: 700;
       color: var(--primary);
     }
 
-    .desig-date {
-      color: var(--text-muted);
-      font-weight: 500;
-      font-size: 10.8px;
+    .role-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 7px;
     }
 
-    /* BD Numbered Functional Sections */
-    .cat-group {
+    .role-badge {
+      background: var(--accent-light);
+      color: var(--primary);
+      border: 1px solid #bfdbfe;
+      padding: 2.5px 8px;
+      border-radius: 3px;
+      font-size: 10.8px;
+      font-weight: 700;
+    }
+
+    .duty-category {
       margin-bottom: 6px;
     }
 
-    .cat-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .cat-title {
-      font-size: 11.8px;
+    .duty-cat-title {
+      font-size: 11.5px;
       font-weight: 800;
-      color: var(--primary-dark);
+      color: var(--primary);
       margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
-    .cat-text {
-      font-size: 12px;
+    .duty-cat-desc {
+      font-size: 11.2px;
       line-height: 1.48;
       color: var(--text-body);
       text-align: justify;
     }
 
-    .cat-text strong {
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    /* ================= TABLES ================= */
-    .cv-table {
+    /* Structured Tables */
+    .data-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 11.8px;
-      margin-top: 4px;
+      font-size: 11.2px;
     }
 
-    .cv-table th, .cv-table td {
-      border: 1px solid var(--border-color);
-      padding: 5px 8px;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    .cv-table th {
-      background-color: var(--table-header-bg);
+    .data-table th {
+      background: var(--table-header-bg);
       color: var(--primary-dark);
       font-weight: 800;
-      font-size: 11.5px;
+      font-size: 10.8px;
+      text-align: left;
+      padding: 3.5px 7px;
+      border: 1px solid var(--border-color);
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
 
-    .cv-table td strong {
-      color: var(--text-main);
-    }
-
-    /* Skills Table */
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-      margin-top: 4px;
-    }
-
-    .skills-table td {
+    .data-table td {
       border: 1px solid var(--border-color);
-      padding: 5px 8px;
-      vertical-align: top;
-    }
-
-    .skills-cat {
-      width: 28%;
-      background: var(--bg-light);
-      font-weight: 700;
-      color: var(--primary);
-      font-size: 11.5px;
-    }
-
-    .skills-val {
+      padding: 3.5px 7px;
+      vertical-align: middle;
       color: var(--text-body);
-      line-height: 1.42;
+      line-height: 1.32;
+    }
+
+    .data-table tr:nth-child(even) {
+      background: var(--bg-light);
+    }
+
+    .skill-cat-cell {
+      font-weight: 700;
+      color: var(--primary-dark);
+      width: 27%;
+      background: var(--bg-light);
     }
 
     /* Personal Particulars Table */
     .personal-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 11.5px;
-      margin-top: 3px;
+      font-size: 11.2px;
     }
 
     .personal-table td {
       border: 1px solid var(--border-color);
-      padding: 4px 7px;
+      padding: 4px 8px;
       vertical-align: middle;
     }
 
     .p-label {
-      width: 20%;
+      width: 22%;
       background: var(--bg-light);
       font-weight: 700;
       color: var(--text-main);
-      font-size: 11.2px;
+      font-size: 11px;
     }
 
     .p-val {
-      width: 30%;
+      width: 28%;
       color: var(--text-body);
     }
 
@@ -366,14 +331,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-top: 3px;
     }
 
     .ref-box {
       border: 1px solid var(--border-color);
       background: var(--bg-light);
       border-top: 3px solid var(--primary);
-      padding: 6px 10px;
+      padding: 7px 11px;
       border-radius: 3px;
     }
 
@@ -400,18 +364,17 @@
     .ref-box-contact {
       font-size: 10.8px;
       color: var(--text-body);
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     /* Declaration */
     .declaration-box {
-      margin-top: 6px;
       border-top: 1px solid var(--border-color);
-      padding-top: 5px;
+      padding-top: 6px;
     }
 
     .declaration-text {
-      font-size: 11.2px;
+      font-size: 11px;
       line-height: 1.35;
       color: var(--text-body);
       text-align: justify;
@@ -419,53 +382,56 @@
       font-style: italic;
     }
 
-    .sig-row {
+    .sign-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      margin-top: 2px;
     }
 
-    .sig-block {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+    .sign-col-left {
+      font-size: 11px;
+      color: var(--text-body);
+      font-weight: 600;
+    }
+
+    .sign-col-right {
+      text-align: right;
     }
 
     .sig-img {
-      height: 40px;
-      max-width: 165px;
+      height: 38px;
+      max-width: 160px;
       object-fit: contain;
       margin-bottom: 3px;
-      display: block;
+      display: inline-block;
     }
 
     .sig-line {
       border-top: 1.5px solid var(--text-main);
       padding-top: 3px;
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 800;
-      color: var(--text-main);
-      text-align: center;
+      color: var(--primary-dark);
       min-width: 170px;
     }
 
-    .sig-title {
-      font-size: 10.5px;
+    .sig-sub {
+      font-size: 10.2px;
       color: var(--text-muted);
-      text-align: center;
+      font-weight: 600;
     }
 
-    /* Page Footer */
+    /* Footer */
     .page-footer {
+      border-top: 1px solid var(--border-light);
+      padding-top: 5px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 10px;
       color: var(--text-muted);
-      border-top: 1px solid var(--border-light);
-      padding-top: 5px;
       font-weight: 500;
-      margin-top: auto;
     }
 
     /* Print Styles */
@@ -473,6 +439,10 @@
       body {
         background: transparent !important;
         padding: 0 !important;
+      }
+
+      .no-print {
+        display: none !important;
       }
 
       .cv-container {
@@ -485,7 +455,7 @@
         width: 210mm !important;
         height: 297mm !important;
         max-height: 297mm !important;
-        padding: 24px 36px 18px 36px !important;
+        padding: 26px 36px 18px 36px !important;
       }
     }
 
@@ -502,260 +472,244 @@
   <!-- ============================================================== -->
   <!-- ======================== PAGE 1 ============================== -->
   <!-- ============================================================== -->
-  <div class="cv-page">
-    <div class="page-content">
-
-      <!-- Header Section -->
-      <header class="cv-header">
-        <div class="header-main">
-          <div class="cv-doc-title">Curriculum Vitae</div>
-          <h1 class="candidate-name">MD. Mainul Islam Imon</h1>
-          <div class="candidate-designation">IT Specialist &amp; System Administrator</div>
-
-          <div class="contact-grid">
-            <div class="contact-row">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>+880 1881 144992</span>
+  <div class="cv-page" id="page-1">
+    <div class="page-body page-1-body">
+      
+      <!-- Top Header -->
+      <table class="header-table">
+        <tr>
+          <td class="header-left">
+            <div class="cv-main-title">Curriculum Vitae</div>
+            <h1 class="candidate-name">MD. Mainul Islam Imon</h1>
+            <div class="candidate-designation">IT Specialist & System Administrator</div>
+            
+            <div class="contact-grid">
+              <div class="contact-item">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>+880 1881 144992</span>
+              </div>
+              <div class="contact-item">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span>mdmainulislamimon@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>linkedin.com/in/mdmainul-islam-imon</span>
+              </div>
+              <div class="contact-item">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Mohammadpur, Dhaka-1207, Bangladesh</span>
+              </div>
             </div>
-            <div class="contact-row">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:mdmainulislamimon@gmail.com">mdmainulislamimon@gmail.com</a>
+          </td>
+          <td class="header-right">
+            <div class="photo-wrapper">
+              <img src="profile.png" alt="MD. Mainul Islam Imon Photo" />
             </div>
-            <div class="contact-row">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              <a href="https://linkedin.com/in/mdmainul-islam-imon" target="_blank">linkedin.com/in/mdmainul-islam-imon</a>
-            </div>
-            <div class="contact-row">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Mohammadpur, Dhaka-1207, Bangladesh</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="photo-box">
-          <img src="profile.png" alt="MD. Mainul Islam Imon" />
-        </div>
-      </header>
+          </td>
+        </tr>
+      </table>
 
       <!-- Career Objective -->
-      <section class="section-block">
-        <div class="section-header">Career Objective &amp; Executive Summary</div>
+      <div>
+        <div class="section-title">Career Objective & Executive Summary</div>
         <p class="objective-text">
-          Dedicated and results-oriented <strong>IT Specialist &amp; System Administrator</strong> with <strong>7+ years of progressive enterprise experience</strong> in managing, securing, and optimizing corporate IT infrastructure, server systems, and business network operations. Proven track record advancing from Executive to <strong>Assistant Manager — IT</strong> at <strong>Stencil Bangladesh Ltd. (Asiatic 360)</strong>. Seeking a leadership role to leverage core competencies in Windows/Linux server administration, MikroTik/Cisco network architecture, Microsoft 365/Google Workspace administration, hardware troubleshooting (Level-3), biometric attendance &amp; ERP software support, and IT procurement to enhance organizational productivity and ensure 99.9% operational uptime.
+          Dedicated, proactive, and results-oriented <strong>IT Specialist & System Administrator</strong> with <strong>7+ years of progressive enterprise experience</strong> in planning, managing, securing, and maintaining mission-critical IT infrastructure, network operations, and corporate systems. Proven track record advancing across 3 progressive roles—from Executive to <strong>Assistant Manager — IT</strong> at Stencil Bangladesh Ltd. (Asiatic 360). Seeking a senior IT management role to leverage deep expertise in Windows/Linux server management, MikroTik & Cisco networking, Microsoft 365/Google Workspace tenant governance, biometric ERP integration, hardware maintenance, and IT vendor negotiation to drive operational excellence.
         </p>
-      </section>
+      </div>
 
-      <!-- Employment History (Company 1) -->
-      <section class="section-block" style="margin-bottom: 0;">
-        <div class="section-header">Employment History / Work Experience</div>
-
-        <div class="job-card">
-          <div class="job-top">
-            <div class="job-company">Stencil Bangladesh Ltd. (Asiatic 360)</div>
-            <div class="job-location-duration">Dhaka, Bangladesh &bull; Mar 2021 – Jul 2026 (5+ Years)</div>
+      <!-- Employment History -->
+      <div>
+        <div class="section-title">Employment History / Work Experience</div>
+        
+        <!-- Company 1: Stencil Bangladesh -->
+        <div class="org-card">
+          <div class="org-header">
+            <div>
+              <span class="org-name">Stencil Bangladesh Ltd. (Asiatic 360)</span>
+            </div>
+            <div class="org-location-date">Dhaka, Bangladesh • Mar 2021 – Jul 2026 (5+ Years)</div>
+          </div>
+          <div class="role-badge-row">
+            <span class="role-badge">Assistant Manager — IT (Jan 2026 – Jul 2026)</span>
+            <span class="role-badge">Senior Executive — IT (Jan 2023 – Dec 2025)</span>
+            <span class="role-badge">Executive — IT (Mar 2021 – Dec 2022)</span>
           </div>
 
-          <div class="job-designations">
-            <span class="desig-badge">Assistant Manager — IT <span class="desig-date">(Jan 2026 – Jul 2026)</span></span>
-            <span>&bull;</span>
-            <span class="desig-badge">Senior Executive — IT <span class="desig-date">(Jan 2023 – Dec 2025)</span></span>
-            <span>&bull;</span>
-            <span class="desig-badge">Executive — IT <span class="desig-date">(Mar 2021 – Dec 2022)</span></span>
+          <!-- Duty 1 -->
+          <div class="duty-category">
+            <div class="duty-cat-title">1. Diagnosing and Troubleshooting:</div>
+            <div class="duty-cat-desc">
+              Providing Level-3 desktop and workstation support, anti-virus server management, core network troubleshooting, data communication, internet connectivity, and email administration. Delivering prompt technical problem-solving over phone and remote assistance. Managing data backups, system updates, endpoint security policies, hardware troubleshooting, and installing & configuring OS (Windows 10/11, Linux, macOS).
+            </div>
           </div>
 
-          <!-- BD Standard Numbered Duties -->
-          <div class="cat-group">
-            <div class="cat-title">1. Diagnosing and Troubleshooting:</div>
-            <p class="cat-text">
-              Providing Level-3 desktop and workstation support, anti-virus server management, corporate network support, data communications, internet connectivity, and email administration. Troubleshooting hardware, OS, and client software problems; delivering instant technical solutions via on-site visits, remote desktop, and phone support. Performing regular automated data backups, system security patching, and OS maintenance.
-            </p>
+          <!-- Duty 2 -->
+          <div class="duty-category">
+            <div class="duty-cat-title">2. Installation and Configuration:</div>
+            <div class="duty-cat-desc">
+              Configuring corporate user email clients via Microsoft Outlook and Google Workspace. Managing and troubleshooting LAN, WAN, VLAN segments, MikroTik routers, and Cisco managed switches. Servicing and supporting network printers, heavy-duty laser printers, inkjet printers, and label printers. Configuring and installing Wi-Fi Access Points, NVR, DVR, XVR, and IP CCTV cameras. Installing and maintaining projectors, scanners, and Windows/Linux server platforms.
+            </div>
           </div>
 
-          <div class="cat-group">
-            <div class="cat-title">2. Installation and Configuration:</div>
-            <p class="cat-text">
-              Configuring corporate user email clients via Microsoft Outlook, Microsoft 365, and Google Workspace. Managing, configuring, and troubleshooting LAN, WAN, and VLAN environments using <strong>MikroTik RouterOS and Cisco switches</strong>. Installing, configuring, and servicing Network printers, heavy-duty Laser printers, Inkjet printers, POS &amp; Label printers, and multi-office Projectors and Scanners. Configuring Wi-Fi Access Points, Router gateways, NVR, DVR, XVR, and IP/Analog CCTV surveillance cameras. Installing and maintaining Windows Server (2016/2019/2022), Linux (RHEL/CentOS/Ubuntu), and Hyper-V/VMware virtual machines.
-            </p>
+          <!-- Duty 3 -->
+          <div class="duty-category">
+            <div class="duty-cat-title">3. Repair and Maintenance:</div>
+            <div class="duty-cat-desc">
+              Repairing, assembling, and replacing damaged hardware components (Desktop/Laptop Level-3 maintenance). Maintaining and servicing peripheral devices (Laser/Inkjet printers, scanners, monitors, online UPS). Executing periodic system upgrades, preventive hardware maintenance, performance tuning, and ensuring zero hardware-induced downtime across the organization.
+            </div>
           </div>
 
-          <div class="cat-group">
-            <div class="cat-title">3. Repair and Maintenance:</div>
-            <p class="cat-text">
-              Repairing, assembling, and replacing damaged hardware components across desktop computers and laptops (<strong>Level-3 troubleshooting</strong>). Maintaining and servicing peripheral devices including laser/inkjet printers, scanners, monitors, and online UPS power backup systems. Performing periodic hardware upgrades, performance tuning, preventive maintenance, and server room climate monitoring to prevent hardware failures.
-            </p>
+          <!-- Duty 4 -->
+          <div class="duty-category">
+            <div class="duty-cat-title">4. Technical, ERP & HRMS Support:</div>
+            <div class="duty-cat-desc">
+              Providing comprehensive on-site and remote technical support for ERP, HRM, and Payroll software modules. Assisting HR with ZKTeco biometric attendance synchronization, payment logs, and user access records. Setting up user credentials, emails, and Zoom/Teams video conferencing systems. Conducting IT onboarding and cybersecurity training for employees.
+            </div>
           </div>
 
         </div>
-      </section>
+      </div>
 
     </div>
 
     <!-- Page 1 Footer -->
-    <footer class="page-footer">
-      <span>Curriculum Vitae &bull; MD. Mainul Islam Imon</span>
-      <span>Page 1 of 3</span>
-    </footer>
+    <div class="page-footer">
+      <span>Curriculum Vitae • MD. Mainul Islam Imon</span>
+      <span>Page 1 of 2</span>
+    </div>
   </div>
-
 
   <!-- ============================================================== -->
   <!-- ======================== PAGE 2 ============================== -->
   <!-- ============================================================== -->
-  <div class="cv-page">
-    <div class="page-content">
+  <div class="cv-page" id="page-2">
+    <div class="page-body page-2-body">
 
-      <!-- Stencil Bangladesh Ltd. Continued -->
-      <section class="section-block">
-        <div class="section-header">Employment History (Continued)</div>
+      <!-- Employment Continued & Ahsania -->
+      <div>
+        <div class="section-title">Employment History (Continued) & IT Projects</div>
 
-        <div class="job-card">
-          <div class="job-top">
-            <div class="job-company">Stencil Bangladesh Ltd. (Asiatic 360) — <span style="font-weight: 500; font-size: 12px; color: var(--text-muted);">Continued</span></div>
+        <!-- Asiatic Duties 5 & 6 -->
+        <div class="org-card" style="margin-bottom: 6px;">
+          <div class="duty-category">
+            <div class="duty-cat-title">5. Documentation, Inventory & Reporting (Stencil Bangladesh Ltd. - Asiatic 360):</div>
+            <div class="duty-cat-desc">
+              Managing service-related spare parts inventory, IT asset tagging, software license compliance, and vendor quotation evaluation for hardware procurement. Preparing and submitting Daily, Weekly, and Monthly IT Operations and Maintenance Reports to the Department HOD.
+            </div>
           </div>
 
-          <div class="cat-group">
-            <div class="cat-title">4. Technical &amp; ERP Software Support:</div>
-            <p class="cat-text">
-              Providing comprehensive on-site and remote technical support for enterprise <strong>ERP, HRM, and Payroll software</strong>. Managing and synchronizing employee biometric attendance records, job cards, pay slips, and financial transactions using ERP systems. Integrating <strong>ZKTeco biometric terminals</strong> with internal database servers. Assisting end-users with software setups, video conference meetings (Microsoft Teams, Zoom), and conducting IT orientation and cybersecurity awareness training.
-            </p>
-          </div>
-
-          <div class="cat-group">
-            <div class="cat-title">5. Documentation, Inventory &amp; Reporting:</div>
-            <p class="cat-text">
-              Managing service-related spare parts inventory store, hardware tagging, and stock distribution. Maintaining IT asset logs, software license compliance, and Annual Maintenance Contracts (AMCs). Preparing and presenting daily, weekly, and monthly IT service and spare parts maintenance reports to the Department Head (HOD) and executive management.
-            </p>
-          </div>
-
-          <div class="cat-group">
-            <div class="cat-title">6. IT Infrastructure Setup &amp; Office Relocation Projects:</div>
-            <p class="cat-text">
-              Successfully spearheaded corporate office IT relocation: planned structured CAT6 and fiber-optic cabling matrices, 42U server rack staging, patch panel termination, online UPS power grids, and ISP line migration with <strong>zero data loss and uninterrupted business operations</strong>.
-            </p>
+          <div class="duty-category">
+            <div class="duty-cat-title">6. IT Infrastructure Setup & Office Relocation Projects:</div>
+            <div class="duty-cat-desc">
+              Successfully spearheaded corporate office IT relocation: planned structured CAT6/Fiber cabling layouts, server rack staging, online UPS power balancing, patch panel terminations, and ISP leased-line failover with zero downtime.
+            </div>
           </div>
         </div>
 
         <!-- Company 2: Ahsania E Solutions -->
-        <div class="job-card" style="margin-top: 10px;">
-          <div class="job-top">
-            <div class="job-company">Ahsania E Solutions (Dhaka Ahsania Mission)</div>
-            <div class="job-location-duration">Dhaka, Bangladesh &bull; May 2019 – Mar 2021 (2 Years)</div>
+        <div class="org-card">
+          <div class="org-header">
+            <div>
+              <span class="org-name">Ahsania E Solutions (Dhaka Ahsania Mission)</span>
+            </div>
+            <div class="org-location-date">Dhaka, Bangladesh • May 2019 – Mar 2021 (2 Years)</div>
+          </div>
+          <div class="role-badge-row">
+            <span class="role-badge">IT Executive</span>
           </div>
 
-          <div class="job-designations">
-            <span class="desig-badge">IT Executive</span>
-          </div>
-
-          <div class="cat-group">
-            <div class="cat-title">Key Duties and Responsibilities:</div>
-            <p class="cat-text">
-              Administered Windows and Linux server platforms, Active Directory user accounts, and routine server backup schedules. Configured and maintained MikroTik routers, office LAN/WAN, Wi-Fi networks, firewall rules, and IP CCTV surveillance systems. Provided technical support for computer hardware, printers, scanners, and PABX intercom systems. Managed IT equipment inventory and authored standard troubleshooting documentation.
-            </p>
+          <div class="duty-category">
+            <div class="duty-cat-title">Core Duties and Responsibilities:</div>
+            <div class="duty-cat-desc">
+              Administered Windows and Linux server platforms, Active Directory user permissions, and GPO policies. Managed MikroTik routers, bandwidth queues, VPN connectivity, and office-wide Wi-Fi infrastructure. Monitored CCTV surveillance, ZKTeco biometric devices, and implemented data backups. Provided multi-tier desktop/laptop hardware and software troubleshooting.
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- Technical Skills Matrix Table -->
-      <section class="section-block" style="margin-bottom: 0;">
-        <div class="section-header">Technical Skills &amp; Area of Expertise</div>
-
-        <table class="skills-table">
+      <!-- Technical Skills Matrix -->
+      <div>
+        <div class="section-title">Technical Skills & Area of Expertise</div>
+        <table class="data-table">
           <tr>
-            <td class="skills-cat">Operating Systems &amp; Servers</td>
-            <td class="skills-val">Windows Server (2016-2022), Linux (Red Hat Enterprise Linux, CentOS, Ubuntu), Windows 10/11, macOS, VMware ESXi, Microsoft Hyper-V, Synology NAS (DSM, RAID)</td>
+            <td class="skill-cat-cell">Operating Systems & Servers</td>
+            <td>Windows Server (2016-2022), Linux (RHEL, CentOS, Ubuntu), VMware ESXi, Hyper-V, Synology NAS DSM.</td>
           </tr>
           <tr>
-            <td class="skills-cat">Networking &amp; Security</td>
-            <td class="skills-val">MikroTik RouterOS (MTCNA), Cisco Switching &amp; Routing (CCNA), VLAN, Bandwidth Management, Dual-ISP Redundancy, Firewall Policies, IPsec VPN, OpenVPN</td>
+            <td class="skill-cat-cell">Networking & Security</td>
+            <td>MikroTik RouterOS (MTCNA), Cisco Switches (CCNA), VLAN, Routing, Firewall, Bandwidth Management, Dual-ISP Failover.</td>
           </tr>
           <tr>
-            <td class="skills-cat">Directory, Cloud &amp; Mail</td>
-            <td class="skills-val">Active Directory (AD DS, GPO, DNS, DHCP), Microsoft 365 Admin, Google Workspace, MS Outlook Configuration, Domain Management, Web Hosting, SSL, SPF/DKIM/DMARC</td>
+            <td class="skill-cat-cell">Directory, Cloud & Mail</td>
+            <td>Active Directory (AD DS, GPO, DNS, DHCP), Microsoft 365, Google Workspace, Domain, Web Hosting, SSL, Mail Security.</td>
           </tr>
           <tr>
-            <td class="skills-cat">Security &amp; Hardware Support</td>
-            <td class="skills-val">Level-3 Desktop/Laptop Repair, ZKTeco Biometric Time Attendance &amp; Access Control, IP &amp; Analog CCTV (NVR/DVR/XVR), Network/Laser Printers, Projectors, Scanners, PABX, UPS</td>
+            <td class="skill-cat-cell">Security & Hardware Support</td>
+            <td>Level-3 Desktop/Laptop Repair, ZKTeco Biometrics & Access Control, CCTV (IP/NVR/DVR/XVR), Network & Laser Printers.</td>
           </tr>
           <tr>
-            <td class="skills-cat">Software &amp; IT Management</td>
-            <td class="skills-val">ERP/HRM &amp; Payroll Software Support, IT Asset Tagging &amp; Inventory Management, Vendor Negotiation, AMC Maintenance, Spare Parts Store, SOP Documentation &amp; HOD Reporting</td>
+            <td class="skill-cat-cell">Software & IT Management</td>
+            <td>ERP/HRM & Payroll Software Support, IT Asset Tagging & Inventory, Vendor Quotations, AMC Management, HOD Reporting.</td>
           </tr>
         </table>
-      </section>
-
-    </div>
-
-    <!-- Page 2 Footer -->
-    <footer class="page-footer">
-      <span>Curriculum Vitae &bull; MD. Mainul Islam Imon</span>
-      <span>Page 2 of 3</span>
-    </footer>
-  </div>
-
-
-  <!-- ============================================================== -->
-  <!-- ======================== PAGE 3 ============================== -->
-  <!-- ============================================================== -->
-  <div class="cv-page">
-    <div class="page-content">
+      </div>
 
       <!-- Academic Qualifications -->
-      <section class="section-block">
-        <div class="section-header">Academic Qualifications</div>
-
-        <table class="cv-table">
+      <div>
+        <div class="section-title">Academic Qualifications</div>
+        <table class="data-table">
           <thead>
             <tr>
               <th style="width: 28%;">Exam / Degree</th>
-              <th style="width: 24%;">Major / Group</th>
-              <th style="width: 26%;">Institute / University</th>
-              <th style="width: 12%;">Passing Year</th>
-              <th style="width: 10%;">Result</th>
+              <th style="width: 28%;">Major / Group</th>
+              <th style="width: 28%;">Institute / University</th>
+              <th style="width: 8%; text-align: center;">Year</th>
+              <th style="width: 8%; text-align: center;">Result</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>B.Sc. in Engineering</strong></td>
-              <td>Computer Science &amp; Eng.</td>
+              <td>Computer Science & Eng.</td>
               <td>Bangladesh University</td>
-              <td>Nov 2026 (Exp.)</td>
-              <td><strong>CGPA 3.52</strong></td>
+              <td style="text-align: center;">2026 (Exp.)</td>
+              <td style="text-align: center;"><strong>CGPA 3.52</strong></td>
             </tr>
             <tr>
               <td><strong>Diploma in Engineering</strong></td>
               <td>Computer Technology</td>
-              <td>Patuakhali Polytechnic Inst. (BTEB)</td>
-              <td>2018</td>
-              <td><strong>CGPA 2.95</strong></td>
+              <td>Patuakhali Polytechnic Institute (BTEB)</td>
+              <td style="text-align: center;">2018</td>
+              <td style="text-align: center;"><strong>CGPA 2.95</strong></td>
             </tr>
             <tr>
               <td><strong>SSC</strong></td>
               <td>Science</td>
               <td>Bakerganj Model High School (Barishal)</td>
-              <td>2014</td>
-              <td><strong>GPA 5.00</strong></td>
+              <td style="text-align: center;">2014</td>
+              <td style="text-align: center;"><strong>GPA 5.00</strong></td>
             </tr>
           </tbody>
         </table>
-      </section>
+      </div>
 
       <!-- Professional Training & Certifications -->
-      <section class="section-block">
-        <div class="section-header">Professional Training &amp; Certifications</div>
-
-        <table class="cv-table">
+      <div>
+        <div class="section-title">Professional Training & Certifications</div>
+        <table class="data-table">
           <thead>
             <tr>
-              <th style="width: 45%;">Course / Certification Title</th>
-              <th style="width: 40%;">Institute / Academy</th>
-              <th style="width: 15%;">Location / Year</th>
+              <th style="width: 48%;">Course / Certification Title</th>
+              <th style="width: 32%;">Institute / Academy</th>
+              <th style="width: 20%;">Location / Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>NSE 1 — Network Security Associate</strong></td>
               <td>Fortinet Training Institute</td>
-              <td>Online Certification</td>
+              <td>Online Verified</td>
             </tr>
             <tr>
               <td><strong>NDG Linux Unhatched</strong></td>
@@ -768,7 +722,7 @@
               <td>Dhanmondi, Dhaka</td>
             </tr>
             <tr>
-              <td><strong>Red Hat Linux Administration (RHCSA &amp; RHCE)</strong></td>
+              <td><strong>Red Hat Linux Administration (RHCSA & RHCE)</strong></td>
               <td>CSL Training</td>
               <td>Lalmatia, Dhaka</td>
             </tr>
@@ -778,23 +732,22 @@
               <td>Lalmatia, Dhaka</td>
             </tr>
             <tr>
-              <td><strong>CCNA — Routing &amp; Switching</strong></td>
+              <td><strong>CCNA — Routing & Switching</strong></td>
               <td>CSL Training</td>
               <td>Lalmatia, Dhaka</td>
             </tr>
             <tr>
               <td><strong>Basic / Computer Networking</strong></td>
-              <td>Global Information &amp; Technology (GIT)</td>
+              <td>Global Information & Technology (GIT)</td>
               <td>Mirpur, Dhaka</td>
             </tr>
           </tbody>
         </table>
-      </section>
+      </div>
 
-      <!-- Personal Information -->
-      <section class="section-block">
-        <div class="section-header">Personal Particulars</div>
-
+      <!-- Personal Particulars -->
+      <div>
+        <div class="section-title">Personal Particulars</div>
         <table class="personal-table">
           <tr>
             <td class="p-label">Father's Name</td>
@@ -830,60 +783,61 @@
           </tr>
           <tr>
             <td class="p-label">Language Proficiency</td>
-            <td class="p-val" colspan="3"><strong>Bangla:</strong> Native / Mother Tongue &nbsp;|&nbsp; <strong>English:</strong> Fluent (Speaking, Reading, Writing)</td>
+            <td class="p-val" colspan="3"><strong>Bangla:</strong> Native / Mother Tongue &nbsp;|&nbsp; <strong>English:</strong> Professional Working Proficiency (Reading, Writing, Speaking)</td>
           </tr>
         </table>
-      </section>
+      </div>
 
-      <!-- References -->
-      <section class="section-block">
-        <div class="section-header">References</div>
-
+      <!-- References & Declaration -->
+      <div>
+        <div class="section-title">References & Declaration</div>
+        
         <div class="ref-container">
           <div class="ref-box">
             <div class="ref-box-name">Apu Zisan Halder</div>
             <div class="ref-box-desig">Officer, Human Resources</div>
             <div class="ref-box-org">SIL International Bangladesh</div>
-            <div class="ref-box-contact">Mobile: +880 1768 174341</div>
-            <div class="ref-box-contact">Email: apu_zisan@sil.org</div>
+            <div class="ref-box-contact">
+              Mobile: +880 1768 174341<br />
+              Email: apu_zisan@sil.org
+            </div>
           </div>
 
           <div class="ref-box">
             <div class="ref-box-name">Sabbir Islam Mukdo</div>
             <div class="ref-box-desig">Software Engineer 3</div>
             <div class="ref-box-org">Surbana Jurong</div>
-            <div class="ref-box-contact">Mobile: +880 1628 504000</div>
-            <div class="ref-box-contact">Email: sabbir.mugda@coe.surbana.tech</div>
+            <div class="ref-box-contact">
+              Mobile: +880 1628 504000<br />
+              Email: sabbir.mugda@coe.surbana.tech
+            </div>
           </div>
         </div>
-      </section>
 
-      <!-- Declaration & Signature -->
-      <section class="declaration-box">
-        <p class="declaration-text">
-          "I hereby declare that all the information provided in this curriculum vitae is true, complete, and accurate to the best of my knowledge and belief."
-        </p>
-
-        <div class="sig-row">
-          <div style="font-size: 11.5px; color: var(--text-muted); font-weight: 500;">
-            Date: ____________________
-          </div>
-
-          <div class="sig-block">
-            <img src="signature.png" alt="Signature" class="sig-img" />
-            <div class="sig-line">MD. Mainul Islam Imon</div>
-            <div class="sig-title">Signature of the Applicant</div>
+        <div class="declaration-box" style="margin-top: 6px;">
+          <p class="declaration-text">
+            "I hereby declare that all the information provided in this curriculum vitae is true, complete, and correct to the best of my knowledge and belief."
+          </p>
+          <div class="sign-row">
+            <div class="sign-col-left">
+              Date: ____________________
+            </div>
+            <div class="sign-col-right">
+              <img src="signature.png" alt="Signature" class="sig-img" />
+              <div class="sig-line">MD. Mainul Islam Imon</div>
+              <div class="sig-sub">Signature of the Applicant</div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
     </div>
 
-    <!-- Page 3 Footer -->
-    <footer class="page-footer">
-      <span>Curriculum Vitae &bull; MD. Mainul Islam Imon</span>
-      <span>Page 3 of 3</span>
-    </footer>
+    <!-- Page 2 Footer -->
+    <div class="page-footer">
+      <span>Curriculum Vitae • MD. Mainul Islam Imon</span>
+      <span>Page 2 of 2</span>
+    </div>
   </div>
 
 </div>
