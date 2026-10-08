@@ -15,38 +15,33 @@
     }
 
     :root {
-      --primary: #4f46e5;
-      --primary-dark: #3730a3;
+      --primary: #4338ca;         /* Refined Indigo */
+      --primary-dark: #312e81;
       --primary-light: #eef2ff;
       --primary-border: #c7d2fe;
-      --accent: #6366f1;
-      --dark: #0f172a;
-      --dark-muted: #334155;
-      --body: #334155;
-      --body-light: #475569;
-      --muted: #64748b;
-      --border: #e2e8f0;
+      --text-dark: #0f172a;       /* Slate 900 */
+      --text-body: #334155;       /* Slate 700 */
+      --text-muted: #64748b;      /* Slate 500 */
+      --border-color: #e2e8f0;    /* Slate 200 */
       --border-light: #f1f5f9;
-      --bg-sidebar: #f8fafc;
-      --bg-card: #ffffff;
-      --bg-card-alt: #f8faff;
-      --badge-bg: #eef2ff;
-      --badge-color: #4338ca;
+      --bg-light: #f8fafc;        /* Slate 50 */
+      --bg-card: #f8fafc;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #334155;
-      color: var(--body);
-      font-size: 13px;
+      background-color: #475569;
+      color: var(--text-body);
+      font-size: 13.5px;
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       padding: 30px 0;
     }
 
-    h1, h2, h3, h4, .font-heading {
+    h1, h2, h3, h4, .heading {
       font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      color: var(--text-dark);
     }
 
     .cv-wrapper {
@@ -62,106 +57,67 @@
       height: 297mm;
       max-height: 297mm;
       background: #ffffff;
-      display: grid;
-      grid-template-columns: 68mm 142mm;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
       position: relative;
       overflow: hidden;
       page-break-after: always;
       page-break-inside: avoid;
+      padding: 30px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .cv-page:last-child {
       page-break-after: avoid;
     }
 
-    /* ================= SIDEBAR ================= */
-    .sidebar {
-      background-color: var(--bg-sidebar);
-      border-right: 1.5px solid var(--border);
-      padding: 24px 18px;
+    /* ================= HEADER ================= */
+    .header-top {
       display: flex;
-      flex-direction: column;
-      gap: 18px;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    /* Photo Banner */
-    .photo-banner {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      border-radius: 12px;
-      padding: 14px 10px;
-      display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      border: 1px solid #334155;
-      box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
-    }
-
-    .photo-frame {
-      width: 110px;
-      height: 128px;
-      border-radius: 8px;
-      border: 2.5px solid rgba(255, 255, 255, 0.95);
-      overflow: hidden;
-      background: #cbd5e1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    }
-
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    /* Sidebar Section */
-    .sb-section {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .sb-title {
-      font-size: 11.5px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding-bottom: 5px;
       border-bottom: 2px solid var(--primary);
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      gap: 20px;
     }
 
-    .sb-title svg {
-      width: 15px;
-      height: 15px;
-      stroke: var(--primary);
-      stroke-width: 2.3;
-      flex-shrink: 0;
+    .header-info {
+      flex: 1;
     }
 
-    /* Contact List */
-    .contact-list {
+    .header-name {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 4px;
+      color: var(--text-dark);
+    }
+
+    .header-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .header-contacts {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      font-size: 12px;
+      color: var(--text-body);
+      font-weight: 500;
     }
 
     .contact-item {
       display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 11.5px;
-      color: var(--dark-muted);
-      line-height: 1.35;
-      font-weight: 500;
-      word-break: break-word;
+      align-items: center;
+      gap: 6px;
     }
 
     .contact-item svg {
@@ -169,455 +125,330 @@
       height: 14px;
       stroke: var(--primary);
       stroke-width: 2.2;
-      margin-top: 1px;
       flex-shrink: 0;
     }
 
     .contact-item a {
       color: inherit;
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.15s;
     }
+
     .contact-item a:hover {
       color: var(--primary);
     }
 
-    /* Education Item */
-    .edu-item {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      padding-bottom: 10px;
-      border-bottom: 1px dashed var(--border);
-    }
-
-    .edu-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .edu-degree {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1.25;
-    }
-
-    .edu-inst {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--body-light);
-      line-height: 1.25;
-    }
-
-    .edu-meta {
-      font-size: 10.5px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .edu-badge {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      background: var(--primary-light);
-      border: 1px solid var(--primary-border);
-      padding: 2px 7px;
-      border-radius: 4px;
-      align-self: flex-start;
-      margin-top: 2px;
-    }
-
-    /* Skill Group */
-    .skill-group {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .skill-group-label {
-      font-size: 10.5px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-
-    .skill-pill {
-      font-size: 10.5px;
-      font-weight: 600;
-      color: var(--dark-muted);
-      background: #ffffff;
-      border: 1px solid var(--border);
-      padding: 3px 7px;
-      border-radius: 4px;
-      line-height: 1.2;
-    }
-
-    .skill-pill.highlight {
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      font-weight: 700;
-      border-color: var(--primary-border);
-    }
-
-    /* Certifications List */
-    .cert-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .cert-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      font-size: 11px;
-      line-height: 1.3;
-      color: var(--dark-muted);
-    }
-
-    .cert-bullet {
-      width: 5px;
-      height: 5px;
-      background: var(--primary);
-      border-radius: 50%;
-      margin-top: 5px;
+    .header-photo-wrapper {
+      width: 86px;
+      height: 104px;
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+      overflow: hidden;
       flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      background: #e2e8f0;
     }
 
-    .cert-name {
-      font-weight: 700;
-      color: var(--dark);
+    .header-photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
       display: block;
     }
 
-    .cert-issuer {
-      font-size: 10px;
-      color: var(--muted);
-      font-weight: 500;
+    /* ================= SECTIONS ================= */
+    .section {
+      margin-bottom: 15px;
     }
 
-    /* Competency Badges */
-    .badge-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .comp-badge {
-      font-size: 10.5px;
-      font-weight: 600;
-      color: var(--primary-dark);
-      background: var(--primary-light);
-      border: 1px solid var(--primary-border);
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    /* ================= MAIN CONTENT ================= */
-    .main-content {
-      padding: 26px 24px 20px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      height: 100%;
-      overflow: hidden;
-      background: #ffffff;
-    }
-
-    /* Header */
-    .header {
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 12px;
-    }
-
-    .header-sub {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    .header-name {
-      font-size: 27px;
-      font-weight: 900;
-      color: var(--dark);
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-      margin-bottom: 4px;
-    }
-
-    .header-role {
+    .section-title {
       font-size: 13px;
       font-weight: 800;
-      color: var(--primary);
-      letter-spacing: 1px;
       text-transform: uppercase;
-    }
-
-    /* Section Component */
-    .section {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .section-header {
+      letter-spacing: 0.8px;
+      color: var(--primary-dark);
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 12.5px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--dark);
-      padding-bottom: 5px;
-      border-bottom: 1.5px solid var(--border);
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--border-color);
     }
 
-    .section-header svg {
+    .section-title svg {
       width: 16px;
       height: 16px;
       stroke: var(--primary);
-      stroke-width: 2.4;
+      stroke-width: 2.3;
       flex-shrink: 0;
     }
 
-    .section-header .line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* Summary Text */
+    /* Executive Summary */
     .summary-text {
-      font-size: 12.5px;
+      font-size: 12.8px;
       line-height: 1.6;
-      color: var(--body);
+      color: var(--text-body);
       text-align: justify;
     }
 
     .summary-text strong {
-      color: var(--dark);
+      color: var(--text-dark);
       font-weight: 700;
     }
 
-    /* At A Glance Stat Grid */
-    .glance-grid {
+    /* Skills Matrix */
+    .skills-matrix {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 18px;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 12px 16px;
     }
 
-    .glance-card {
-      background: var(--bg-card-alt);
-      border: 1px solid var(--primary-border);
-      border-radius: 8px;
-      padding: 8px 8px;
-      text-align: center;
+    .skill-block {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      gap: 3px;
     }
 
-    .glance-num {
-      font-size: 17px;
-      font-weight: 900;
+    .skill-category {
+      font-size: 11.5px;
+      font-weight: 800;
       color: var(--primary);
-      line-height: 1.1;
-    }
-
-    .glance-label {
-      font-size: 9.5px;
-      font-weight: 700;
-      color: var(--dark-muted);
       text-transform: uppercase;
       letter-spacing: 0.4px;
-      margin-top: 1px;
     }
 
-    /* Experience Block */
-    .job-block {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .skill-items {
+      font-size: 12px;
+      color: var(--text-body);
+      line-height: 1.45;
+      font-weight: 500;
     }
 
-    .job-head {
+    /* ================= EXPERIENCE ================= */
+    .exp-item {
+      margin-bottom: 14px;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 10px;
+      margin-bottom: 3px;
     }
 
-    .job-company {
-      font-size: 14.5px;
+    .exp-company {
+      font-size: 15px;
       font-weight: 800;
-      color: var(--dark);
-      line-height: 1.2;
+      color: var(--text-dark);
     }
 
-    .job-location {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .job-roles {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin-top: 1px;
-    }
-
-    .role-badge-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .exp-location {
       font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
     }
 
-    .role-title {
+    .exp-roles {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 12px;
+      margin-bottom: 8px;
+    }
+
+    .role-tag {
+      font-size: 12px;
       font-weight: 700;
-      color: var(--dark);
-    }
-
-    .role-title.lead {
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    .role-period {
-      font-size: 10.5px;
-      color: var(--body-light);
-      background: var(--border-light);
-      padding: 1.5px 7px;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      padding: 2px 8px;
       border-radius: 4px;
+    }
+
+    .role-tag.secondary {
+      background: #ffffff;
+      color: var(--text-body);
+      border-color: var(--border-color);
       font-weight: 600;
     }
 
-    .role-period.current {
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      font-weight: 700;
-      border: 1px solid var(--primary-border);
-    }
-
-    /* Responsibility Groups */
-    .resp-category {
-      margin-top: 3px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .resp-cat-title {
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--primary);
-      letter-spacing: 0.4px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .resp-list {
+    .bullet-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 4.5px;
+      gap: 6px;
     }
 
-    .resp-list li {
+    .bullet-list li {
       position: relative;
-      padding-left: 14px;
-      font-size: 12px;
-      line-height: 1.48;
-      color: var(--body);
+      padding-left: 15px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--text-body);
       text-align: justify;
     }
 
-    .resp-list li::before {
+    .bullet-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 6px;
-      width: 5px;
-      height: 5px;
+      top: 6.5px;
+      width: 5.5px;
+      height: 5.5px;
       background: var(--primary);
       border-radius: 1.5px;
     }
 
-    .resp-list li strong {
-      color: var(--dark);
+    .bullet-list li strong {
+      color: var(--text-dark);
       font-weight: 700;
     }
 
-    /* Projects Box */
-    .project-card {
-      background: var(--bg-card-alt);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--primary);
-      border-radius: 6px;
-      padding: 9px 12px;
-      margin-bottom: 6px;
+    /* ================= PROJECTS ================= */
+    .project-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .project-title {
-      font-size: 12.5px;
-      font-weight: 800;
-      color: var(--dark);
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 3.5px solid var(--primary);
+      border-radius: 6px;
+      padding: 9px 12px;
+    }
+
+    .project-title-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
-    .project-badge {
-      font-size: 10px;
-      color: var(--primary-dark);
+    .project-name {
+      font-size: 12.8px;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .project-tag {
+      font-size: 10.5px;
       font-weight: 700;
+      color: var(--primary-dark);
       background: var(--primary-light);
       border: 1px solid var(--primary-border);
       padding: 1.5px 6px;
       border-radius: 4px;
     }
 
-    .project-desc {
-      font-size: 11.5px;
-      color: var(--body);
-      line-height: 1.5;
+    .project-details {
+      font-size: 12px;
+      color: var(--text-body);
+      line-height: 1.48;
       text-align: justify;
     }
 
-    .project-desc strong {
-      color: var(--dark);
+    .project-details strong {
+      color: var(--text-dark);
     }
 
-    /* References Grid */
+    /* ================= TWO-COLUMN BOTTOM (Page 2) ================= */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+
+    /* Certifications */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .cert-item::before {
+      content: "";
+      width: 4.5px;
+      height: 4.5px;
+      background: var(--primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    .cert-name {
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .cert-inst {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    /* Education */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .edu-card {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .edu-degree {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.25;
+    }
+
+    .edu-school {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+
+    .edu-score {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    /* References */
     .ref-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 16px;
     }
 
     .ref-card {
-      background: var(--bg-card-alt);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
       padding: 10px 12px;
       display: flex;
       flex-direction: column;
@@ -627,50 +458,43 @@
     .ref-name {
       font-size: 13px;
       font-weight: 800;
-      color: var(--dark);
+      color: var(--text-dark);
     }
 
-    .ref-role {
+    .ref-title {
       font-size: 11.5px;
       font-weight: 700;
       color: var(--primary);
     }
 
-    .ref-org {
+    .ref-company {
       font-size: 11px;
-      color: var(--body-light);
       font-weight: 600;
-      margin-bottom: 3px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
     }
 
-    .ref-contact {
-      font-size: 10.5px;
-      color: var(--dark-muted);
-      line-height: 1.35;
+    .ref-line {
+      font-size: 11px;
+      color: var(--text-body);
       font-weight: 500;
+      line-height: 1.35;
     }
 
-    .ref-relation {
-      font-size: 10px;
-      font-style: italic;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    /* Page Footer / Numbering */
+    /* Footer */
     .page-footer {
-      margin-top: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 10px;
-      color: var(--muted);
-      border-top: 1px solid var(--border-light);
-      padding-top: 6px;
+      font-size: 10.5px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 8px;
       font-weight: 500;
+      margin-top: auto;
     }
 
-    /* Print Optimization */
+    /* Print Styles */
     @media print {
       body {
         background: transparent !important;
@@ -687,6 +511,7 @@
         width: 210mm !important;
         height: 297mm !important;
         max-height: 297mm !important;
+        padding: 28px 32px !important;
       }
     }
 
@@ -704,244 +529,112 @@
   <!-- ======================== PAGE 1 ============================== -->
   <!-- ============================================================== -->
   <div class="cv-page">
-    
-    <!-- SIDEBAR PAGE 1 -->
-    <aside class="sidebar">
+    <div>
       
-      <!-- Photo Banner -->
-      <div class="photo-banner">
-        <div class="photo-frame">
+      <!-- Top Header -->
+      <header class="header-top">
+        <div class="header-info">
+          <h1 class="header-name">MD. Mainul Islam Imon</h1>
+          <div class="header-title">IT Specialist &amp; System Administrator</div>
+          <div class="header-contacts">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+880 1881 144992</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:mdmainulislamimon@gmail.com">mdmainulislamimon@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <a href="https://linkedin.com/in/mdmainul-islam-imon" target="_blank">linkedin.com/in/mdmainul-islam-imon</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Mohammadpur, Dhaka-1207</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-photo-wrapper">
           <img src="profile.png" alt="MD. Mainul Islam Imon" />
         </div>
-      </div>
+      </header>
 
-      <!-- Contact -->
-      <div class="sb-section">
-        <div class="sb-title">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Contact Info
-        </div>
-        <div class="contact-list">
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>+880 1881 144992</span>
-          </div>
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <a href="mailto:mdmainulislamimon@gmail.com">mdmainulislamimon@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            <a href="https://linkedin.com/in/mdmainul-islam-imon" target="_blank">linkedin.com/in/mdmainul-islam-imon</a>
-          </div>
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Mohammadpur, Dhaka-1207</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Technical Skills -->
-      <div class="sb-section">
-        <div class="sb-title">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-          Technical Skills
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-group-label">Systems &amp; Virtualization</div>
-          <div class="skill-tags">
-            <span class="skill-pill highlight">Windows Server</span>
-            <span class="skill-pill highlight">Active Directory</span>
-            <span class="skill-pill highlight">Linux (RHCSA)</span>
-            <span class="skill-pill">VMware / Hyper-V</span>
-            <span class="skill-pill">Synology NAS</span>
-            <span class="skill-pill">macOS &bull; Win 11</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-group-label">Enterprise Networking</div>
-          <div class="skill-tags">
-            <span class="skill-pill highlight">MikroTik RouterOS</span>
-            <span class="skill-pill highlight">Cisco CCNA</span>
-            <span class="skill-pill">VLAN Routing</span>
-            <span class="skill-pill">Edge Firewalls</span>
-            <span class="skill-pill">ISP Failover</span>
-            <span class="skill-pill">VPN &bull; IPsec</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-group-label">Cloud &amp; SaaS Workspace</div>
-          <div class="skill-tags">
-            <span class="skill-pill highlight">Microsoft 365</span>
-            <span class="skill-pill highlight">Google Workspace</span>
-            <span class="skill-pill">DNS &bull; Hosting &bull; SSL</span>
-            <span class="skill-pill">SPF &bull; DKIM &bull; DMARC</span>
-            <span class="skill-pill">Backup &amp; Recovery</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-group-label">Security &amp; Operations</div>
-          <div class="skill-tags">
-            <span class="skill-pill highlight">ZKTeco Biometrics</span>
-            <span class="skill-pill">IP CCTV &bull; NVR</span>
-            <span class="skill-pill">Endpoint Protection</span>
-            <span class="skill-pill">ERP &amp; HRMS Support</span>
-            <span class="skill-pill">Asset &amp; AMC Mgmt</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Core Competencies -->
-      <div class="sb-section">
-        <div class="sb-title">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Core Competencies
-        </div>
-        <div class="badge-grid">
-          <span class="comp-badge">IT Leadership</span>
-          <span class="comp-badge">Strategic Planning</span>
-          <span class="comp-badge">Infrastructure Architecture</span>
-          <span class="comp-badge">Vendor Negotiation</span>
-          <span class="comp-badge">Zero-Downtime Migration</span>
-          <span class="comp-badge">Process Automation</span>
-        </div>
-      </div>
-
-      <!-- Languages -->
-      <div class="sb-section" style="margin-top: auto;">
-        <div class="sb-title">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Languages
-        </div>
-        <div style="font-size: 11.5px; color: var(--dark-muted); line-height: 1.4; font-weight: 500;">
-          <strong>Bangla</strong> (Native) &bull; <strong>English</strong> (Professional)
-        </div>
-      </div>
-
-    </aside>
-
-    <!-- MAIN CONTENT PAGE 1 -->
-    <main class="main-content">
-      
-      <!-- Header -->
-      <div class="header">
-        <div class="header-sub">RESUME OF</div>
-        <h1 class="header-name">MD. Mainul Islam Imon</h1>
-        <div class="header-role">IT Specialist &amp; System Administrator</div>
-      </div>
-
-      <!-- Professional Summary -->
-      <div class="section">
-        <div class="section-header">
+      <!-- Executive Summary -->
+      <section class="section">
+        <h2 class="section-title">
           <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Professional Summary
-          <div class="line"></div>
-        </div>
+          Executive Summary
+        </h2>
         <p class="summary-text">
-          Results-oriented IT Specialist &amp; System Administrator with <strong>7+ years of progressive enterprise leadership</strong> architecting, securing, and maintaining mission-critical hybrid IT infrastructures. Proven record advancing across three leadership tiers from Executive to <strong>Assistant Manager — IT</strong> at <strong>Stencil Bangladesh Ltd. (Asiatic 360)</strong>. Expert in Windows &amp; Linux server fleet administration, MikroTik/Cisco network security, Microsoft 365 &amp; Google Workspace cloud ecosystems, enterprise storage (Synology NAS), and biometric access integrations. Recognized for delivering <strong>99.9% network/server availability</strong>, driving IT budget optimizations, and executing complex corporate infrastructure migrations with zero data loss.
+          Results-oriented IT Specialist &amp; System Administrator with <strong>7+ years of progressive enterprise leadership</strong> architecting, securing, and maintaining mission-critical hybrid IT infrastructures. Demonstrated success advancing across three tiers from Executive to <strong>Assistant Manager — IT</strong> at <strong>Stencil Bangladesh Ltd. (Asiatic 360)</strong>. Proven track record in Windows &amp; Linux server fleet administration, MikroTik/Cisco network security, Microsoft 365 &amp; Google Workspace enterprise tenants, Synology NAS storage architecture, and biometric access automation. Consistently delivers <strong>99.9% network/server uptime</strong>, drives IT procurement savings, and leads zero-downtime office infrastructure migrations.
         </p>
-      </div>
+      </section>
 
-      <!-- At A Glance Grid -->
-      <div class="glance-grid">
-        <div class="glance-card">
-          <div class="glance-num">7+</div>
-          <div class="glance-label">Years Experience</div>
+      <!-- Technical Skills Matrix -->
+      <section class="section">
+        <h2 class="section-title">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          Core Technical Competencies
+        </h2>
+        <div class="skills-matrix">
+          <div class="skill-block">
+            <div class="skill-category">Operating Systems &amp; Virtualization</div>
+            <div class="skill-items">Windows Server (2016-2022), Linux (RHEL, CentOS, Ubuntu), VMware ESXi, Hyper-V, Synology NAS (RAID/DSM), macOS &amp; Win 11</div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-category">Enterprise Networking &amp; Security</div>
+            <div class="skill-items">MikroTik RouterOS (MTCNA), Cisco IOS (CCNA), VLAN Routing, Edge Firewalls, IPsec/OpenVPN, Multi-ISP BGP/OSPF Failover</div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-category">Cloud, Directory &amp; SaaS Services</div>
+            <div class="skill-items">Microsoft 365 Admin, Google Workspace, Active Directory (AD DS/GPO), DNS/DHCP, SSL/TLS, Domain Security (SPF, DKIM, DMARC)</div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-category">Security Systems &amp; IT Operations</div>
+            <div class="skill-items">ZKTeco Biometric Time &amp; Access Control, IP CCTV (DVR/NVR), ERP/HRMS Support, IT Asset Lifecycle &amp; Annual Maintenance (AMC)</div>
+          </div>
         </div>
-        <div class="glance-card">
-          <div class="glance-num">3</div>
-          <div class="glance-label">Promotions</div>
-        </div>
-        <div class="glance-card">
-          <div class="glance-num">7</div>
-          <div class="glance-label">Certifications</div>
-        </div>
-        <div class="glance-card">
-          <div class="glance-num">99.9%</div>
-          <div class="glance-label">System Uptime</div>
-        </div>
-      </div>
+      </section>
 
       <!-- Professional Experience (Company 1) -->
-      <div class="section">
-        <div class="section-header">
+      <section class="section" style="margin-bottom: 0;">
+        <h2 class="section-title">
           <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           Professional Experience
-          <div class="line"></div>
+        </h2>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">Stencil Bangladesh Ltd. (Asiatic 360)</div>
+            <div class="exp-location">Dhaka, Bangladesh &bull; Mar 2021 – Jul 2026 (5+ Years)</div>
+          </div>
+
+          <div class="exp-roles">
+            <span class="role-tag">Assistant Manager — IT (Jan 2026 – Jul 2026)</span>
+            <span class="role-tag secondary">Senior Executive — IT (Jan 2023 – Dec 2025)</span>
+            <span class="role-tag secondary">Executive — IT (Mar 2021 – Dec 2022)</span>
+          </div>
+
+          <ul class="bullet-list">
+            <li><strong>Hybrid Infrastructure &amp; Virtualization:</strong> Architected and managed enterprise Windows Server &amp; Linux (RHEL) fleet hosted on VMware ESXi/Hyper-V, delivering <strong>99.9% uptime</strong> across <strong>150+ user endpoints</strong> and high-availability Synology NAS storage arrays.</li>
+            <li><strong>Enterprise Network Architecture:</strong> Designed and administered multi-VLAN campus network using <strong>MikroTik RouterOS and Cisco managed switches</strong>; engineered dual-ISP redundant leased lines with automated load balancing and sub-second failover.</li>
+            <li><strong>Active Directory &amp; Group Policy:</strong> Enforced centralized domain security across AD DS, Group Policies (GPOs), DNS, DHCP, and role-based access control (RBAC), mitigating security vulnerabilities across corporate workstations.</li>
+            <li><strong>Cloud Tenant Administration:</strong> Managed enterprise <strong>Microsoft 365 &amp; Google Workspace</strong> tenants, overseeing user provisioning, mailbox routing, domain DNS records, and email deliverability compliance (SPF, DKIM, DMARC).</li>
+            <li><strong>Biometrics &amp; ERP Automation:</strong> Integrated multi-location <strong>ZKTeco biometric terminals</strong> with corporate ERP/HRMS databases, automating daily attendance synchronization and cutting monthly HR payroll processing overhead by 40%.</li>
+            <li><strong>IT Procurement &amp; Vendor Governance:</strong> Commanded annual IT hardware/software budget planning, evaluated vendor tenders, negotiated equipment procurement, and supervised Annual Maintenance Contracts (AMCs), reducing operational costs by ~15%.</li>
+          </ul>
         </div>
+      </section>
 
-        <div class="job-block">
-          <div class="job-head">
-            <div class="job-company">Stencil Bangladesh Ltd. (Asiatic 360)</div>
-            <div class="job-location">Dhaka, BD &bull; 5+ Years</div>
-          </div>
+    </div>
 
-          <div class="job-roles">
-            <div class="role-badge-row">
-              <span class="role-title lead">Assistant Manager — IT</span>
-              <span class="role-period current">Jan 2026 – Jul 2026</span>
-            </div>
-            <div class="role-badge-row">
-              <span class="role-title">Senior Executive — IT</span>
-              <span class="role-period">Jan 2023 – Dec 2025</span>
-            </div>
-            <div class="role-badge-row">
-              <span class="role-title">Executive — IT</span>
-              <span class="role-period">Mar 2021 – Dec 2022</span>
-            </div>
-          </div>
-
-          <!-- Sub-categories of Responsibilities -->
-          <div class="resp-category">
-            <div class="resp-cat-title">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-              Enterprise Infrastructure, Virtualization &amp; Systems
-            </div>
-            <ul class="resp-list">
-              <li>Architected and managed multi-site <strong>Windows Server &amp; Linux (RHEL/CentOS)</strong> environments on VMware/Hyper-V supporting <strong>150+ workstations</strong>.</li>
-              <li>Administered Active Directory (AD DS), Group Policy Objects (GPO), DNS/DHCP scopes, and high-availability <strong>Synology NAS</strong> RAID storage arrays with automated multi-tier backup schedules.</li>
-              <li>Provided tier-3 escalation resolution across Windows, macOS, and Linux client environments, guaranteeing sub-15-minute response times for critical operations.</li>
-            </ul>
-          </div>
-
-          <div class="resp-category">
-            <div class="resp-cat-title">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-              Network Engineering &amp; Cyber Security
-            </div>
-            <ul class="resp-list">
-              <li>Configured and hardened corporate LAN/WAN topologies utilizing <strong>MikroTik RouterOS and Cisco managed switches</strong>; implemented isolated VLANs for corporate users, production, guests, and VoIP.</li>
-              <li>Engineered redundant multi-ISP leased lines with BGP/OSPF dynamic routing, automated load balancing, and failover mechanisms ensuring <strong>zero business interruption</strong>.</li>
-              <li>Enforced edge firewall filtering, VPN site-to-site tunnels, centralized endpoint antivirus servers, and verified email authentication (SPF, DKIM, DMARC) across corporate domains.</li>
-            </ul>
-          </div>
-
-          <div class="resp-category">
-            <div class="resp-cat-title">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-              Cloud Administration, Security &amp; Operations
-            </div>
-            <ul class="resp-list">
-              <li>Managed <strong>Microsoft 365 &amp; Google Workspace</strong> tenants—handling security policies, mailbox lifecycle provisioning, custom routing groups, domain DNS, and SSL renewals.</li>
-              <li>Integrated <strong>ZKTeco biometric attendance &amp; access control</strong> with HRMS/ERP systems, automating employee punch synchronization and reporting workflows.</li>
-              <li>Controlled IT asset lifecycle, software license compliance, vendor procurement negotiations, and Annual Maintenance Contracts (AMCs), saving ~15% in operational overhead.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Page 1 Footer -->
-      <div class="page-footer">
-        <span>MD. Mainul Islam Imon — Curriculum Vitae</span>
-        <span>Page 1 of 2</span>
-      </div>
-
-    </main>
+    <!-- Page 1 Footer -->
+    <footer class="page-footer">
+      <span>MD. Mainul Islam Imon — IT Specialist &amp; System Administrator</span>
+      <span>Page 1 of 2</span>
+    </footer>
   </div>
 
 
@@ -949,235 +642,174 @@
   <!-- ======================== PAGE 2 ============================== -->
   <!-- ============================================================== -->
   <div class="cv-page">
-    
-    <!-- SIDEBAR PAGE 2 -->
-    <aside class="sidebar">
-      
-      <!-- Education -->
-      <div class="sb-section">
-        <div class="sb-title">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          Education
-        </div>
+    <div>
 
-        <div class="edu-item">
-          <div class="edu-degree">B.Sc. in Computer Science &amp; Engineering</div>
-          <div class="edu-inst">Bangladesh University</div>
-          <div class="edu-meta">
-            <span>Expected: Nov 2026</span>
-          </div>
-          <div class="edu-badge">CGPA 3.52 (Pursuing)</div>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-degree">Diploma in Computer Technology</div>
-          <div class="edu-inst">Patuakhali Polytechnic Institute</div>
-          <div class="edu-meta">
-            <span>BTEB &bull; 2018</span>
-          </div>
-          <div class="edu-badge">CGPA 2.95 / 4.00</div>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-degree">Secondary School Certificate (SSC)</div>
-          <div class="edu-inst">Bakerganj Model High School</div>
-          <div class="edu-meta">
-            <span>Science &bull; Barishal Board &bull; 2014</span>
-          </div>
-          <div class="edu-badge">GPA 5.00 / 5.00</div>
-        </div>
-      </div>
-
-      <!-- Professional Certifications -->
-      <div class="sb-section">
-        <div class="sb-title">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-          Certifications
-        </div>
-        <div class="cert-list">
-          <div class="cert-item">
-            <div class="cert-bullet"></div>
-            <div>
-              <span class="cert-name">NSE 1 — Network Security</span>
-              <span class="cert-issuer">Fortinet Training Institute</span>
-            </div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-bullet"></div>
-            <div>
-              <span class="cert-name">NDG Linux Unhatched</span>
-              <span class="cert-issuer">Cisco Networking Academy</span>
-            </div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-bullet"></div>
-            <div>
-              <span class="cert-name">Windows Server Administration</span>
-              <span class="cert-issuer">Creative IT Institute, Dhaka</span>
-            </div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-bullet"></div>
-            <div>
-              <span class="cert-name">Red Hat Linux (RHCSA &amp; RHCE)</span>
-              <span class="cert-issuer">CSL Training, Dhaka</span>
-            </div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-bullet"></div>
-            <div>
-              <span class="cert-name">MTCNA — MikroTik Certified</span>
-              <span class="cert-issuer">CSL Training, Dhaka</span>
-            </div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-bullet"></div>
-            <div>
-              <span class="cert-name">CCNA — Routing &amp; Switching</span>
-              <span class="cert-issuer">CSL Training, Dhaka</span>
-            </div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-bullet"></div>
-            <div>
-              <span class="cert-name">Computer Networking</span>
-              <span class="cert-issuer">GIT, Mirpur, Dhaka</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Interests & Focus -->
-      <div class="sb-section" style="margin-top: auto;">
-        <div class="sb-title">
-          <svg viewBox="0 0 24 24" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Technical Focus
-        </div>
-        <div class="badge-grid">
-          <span class="skill-pill">Cloud Solutions</span>
-          <span class="skill-pill">AI Automation</span>
-          <span class="skill-pill">Cyber Security</span>
-          <span class="skill-pill">High Availability</span>
-          <span class="skill-pill">NAS Architecture</span>
-        </div>
-      </div>
-
-    </aside>
-
-    <!-- MAIN CONTENT PAGE 2 -->
-    <main class="main-content">
-
-      <!-- Previous Experience (Company 2) -->
-      <div class="section">
-        <div class="section-header">
+      <!-- Professional Experience (Company 2) -->
+      <section class="section">
+        <h2 class="section-title">
           <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           Professional Experience (Continued)
-          <div class="line"></div>
-        </div>
+        </h2>
 
-        <div class="job-block">
-          <div class="job-head">
-            <div class="job-company">Ahsania E Solutions (Dhaka Ahsania Mission)</div>
-            <div class="job-location">Dhaka, BD &bull; Full-time</div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-company">Ahsania E Solutions (Dhaka Ahsania Mission)</div>
+            <div class="exp-location">Dhaka, Bangladesh &bull; May 2019 – Mar 2021 (2 Years)</div>
           </div>
 
-          <div class="job-roles">
-            <div class="role-badge-row">
-              <span class="role-title">IT Executive</span>
-              <span class="role-period">May 2019 – Mar 2021 (2 Years)</span>
+          <div class="exp-roles">
+            <span class="role-tag">IT Executive</span>
+          </div>
+
+          <ul class="bullet-list">
+            <li><strong>Systems &amp; Network Management:</strong> Administered on-premises Windows/Linux servers, MikroTik core routers, and enterprise wireless access points, ensuring uninterrupted internal network and internet connectivity.</li>
+            <li><strong>Directory Services &amp; Data Protection:</strong> Managed user accounts and permission matrices within Active Directory; scheduled automated multi-tier server backups and executed routine disaster recovery drill tests.</li>
+            <li><strong>Surveillance &amp; Physical Access Control:</strong> Installed and managed IP CCTV systems (NVR/DVR storage arrays) and biometric access control readers across corporate facilities, maintaining 100% operational readiness.</li>
+            <li><strong>Technical Support &amp; SOP Authoring:</strong> Resolved tier-1/2 hardware, OS, application, printer, and PABX issues; established standardized user onboarding manuals and IT security guidelines.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Key Projects & Accomplishments -->
+      <section class="section">
+        <h2 class="section-title">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Key Enterprise Projects &amp; Accomplishments
+        </h2>
+
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-title-row">
+              <span class="project-name">Corporate Office IT Infrastructure Relocation &amp; Server Room Staging</span>
+              <span class="project-tag">Zero Downtime Migration</span>
+            </div>
+            <p class="project-details">
+              Spearheaded full-cycle IT relocation: planned structured CAT6/Fiber optic cabling matrices, 42U server rack layout, patch panel termination, online UPS/power grids, and multi-ISP failover with <strong>zero data loss and uninterrupted business continuity</strong>.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title-row">
+              <span class="project-name">Enterprise Biometric Access &amp; ERP Synchronization</span>
+              <span class="project-tag">Process Automation</span>
+            </div>
+            <p class="project-details">
+              Engineered automated integration between ZKTeco biometric time-attendance terminals and internal HRMS/ERP databases, eliminating manual attendance reconciliations and accelerating monthly payroll turnaround.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title-row">
+              <span class="project-name">High-Availability Centralized Backup &amp; Storage Architecture</span>
+              <span class="project-tag">Data Resilience</span>
+            </div>
+            <p class="project-details">
+              Architected Synology NAS RAID arrays with off-site automated snapshot replication schedules, ensuring enterprise Disaster Recovery targets (RTO &lt; 1 hour, RPO &lt; 24 hours) for critical corporate assets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two Column: Certifications & Education -->
+      <div class="bottom-grid">
+        
+        <!-- Certifications -->
+        <div>
+          <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            Certifications &amp; Training
+          </h2>
+          <div class="cert-list">
+            <div class="cert-item">
+              <span class="cert-name">NSE 1 — Network Security Associate</span>
+              <span class="cert-inst">&bull; Fortinet</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-name">NDG Linux Unhatched</span>
+              <span class="cert-inst">&bull; Cisco Networking Academy</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-name">Windows Server Administration</span>
+              <span class="cert-inst">&bull; Creative IT Institute</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-name">Red Hat Linux (RHCSA &amp; RHCE)</span>
+              <span class="cert-inst">&bull; CSL Training</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-name">MTCNA — MikroTik Certified Associate</span>
+              <span class="cert-inst">&bull; CSL Training</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-name">CCNA — Routing &amp; Switching</span>
+              <span class="cert-inst">&bull; CSL Training</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-name">Computer Networking Fundamental</span>
+              <span class="cert-inst">&bull; GIT Dhaka</span>
             </div>
           </div>
-
-          <div class="resp-category">
-            <ul class="resp-list">
-              <li><strong>Systems &amp; Network Administration:</strong> Maintained on-premises Windows &amp; Linux server fleet, MikroTik routers, enterprise Wi-Fi APs, and VPN connectivity across multiple departmental wings.</li>
-              <li><strong>Directory &amp; Access Controls:</strong> Managed user provisioning, role-based access matrices, and security GPOs in Active Directory; established scheduled automated backups with disaster recovery validations.</li>
-              <li><strong>Security Surveillance &amp; Biometrics:</strong> Supervised high-definition IP CCTV camera systems (NVR/DVR storage arrays) and biometric access-control hardware, maintaining 100% operational readiness.</li>
-              <li><strong>Helpdesk &amp; Asset Management:</strong> Delivered tier-1/2 technical support for desktop workstations, network printers, scanners, and PABX systems; maintained asset inventory logs and vendor procurement audits.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Key IT Projects & Infrastructure Milestones -->
-      <div class="section">
-        <div class="section-header">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          Key Infrastructure Projects &amp; Accomplishments
-          <div class="line"></div>
         </div>
 
-        <div class="project-card">
-          <div class="project-title">
-            <span>Corporate Office IT Infrastructure Relocation</span>
-            <span class="project-badge">Zero Downtime Migration</span>
-          </div>
-          <div class="project-desc">
-            Spearheaded end-to-end IT infrastructure relocation: planned structured CAT6/Fiber optic cable layout matrices, 42U server rack staging, patch panel terminations, online UPS/power grids, and multi-ISP failover with <strong>zero data loss and uninterrupted business operations</strong>.
+        <!-- Education -->
+        <div>
+          <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Education
+          </h2>
+          <div class="edu-list">
+            <div class="edu-card">
+              <div class="edu-degree">B.Sc. in Computer Science &amp; Engineering</div>
+              <div class="edu-school">Bangladesh University &bull; Expected Nov 2026</div>
+              <div class="edu-score">CGPA 3.52 (Pursuing)</div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-degree">Diploma in Computer Technology</div>
+              <div class="edu-school">Patuakhali Polytechnic Institute &bull; 2018</div>
+              <div class="edu-score">CGPA 2.95 / 4.00</div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-degree">Secondary School Certificate (SSC) — Science</div>
+              <div class="edu-school">Bakerganj Model High School &bull; 2014</div>
+              <div class="edu-score">GPA 5.00 / 5.00 (Board: Barishal)</div>
+            </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-title">
-            <span>Enterprise Biometric Access &amp; ERP Synchronization</span>
-            <span class="project-badge">Process Automation</span>
-          </div>
-          <div class="project-desc">
-            Engineered automated integration between ZKTeco biometric time-attendance terminals and corporate HRMS/ERP databases, eliminating manual attendance reconciliations and accelerating monthly payroll turnaround.
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-title">
-            <span>High-Availability Centralized Backup &amp; Storage Architecture</span>
-            <span class="project-badge">Data Resilience</span>
-          </div>
-          <div class="project-desc">
-            Architected enterprise-grade Synology NAS RAID array paired with off-site cloud replication and snapshot schedules, ensuring rapid Disaster Recovery (RTO &lt; 1 hour, RPO &lt; 24 hours) for mission-critical business data.
-          </div>
-        </div>
       </div>
 
       <!-- Professional References -->
-      <div class="section" style="margin-top: 2px;">
-        <div class="section-header">
+      <section class="section" style="margin-bottom: 0;">
+        <h2 class="section-title">
           <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Professional References
-          <div class="line"></div>
-        </div>
-
+        </h2>
         <div class="ref-grid">
           <div class="ref-card">
             <div class="ref-name">Apu Zisan Halder</div>
-            <div class="ref-role">Officer, Human Resources</div>
-            <div class="ref-org">SIL International Bangladesh</div>
-            <div class="ref-contact">
-              <div>Phone: +880 1768 174341</div>
-              <div>Email: apu_zisan@sil.org</div>
-            </div>
-            <div class="ref-relation">Relation: Professional Reference</div>
+            <div class="ref-title">Officer, Human Resources</div>
+            <div class="ref-company">SIL International Bangladesh</div>
+            <div class="ref-line">Phone: +880 1768 174341</div>
+            <div class="ref-line">Email: apu_zisan@sil.org</div>
           </div>
 
           <div class="ref-card">
             <div class="ref-name">Sabbir Islam Mukdo</div>
-            <div class="ref-role">Software Engineer 3</div>
-            <div class="ref-org">Surbana Jurong</div>
-            <div class="ref-contact">
-              <div>Phone: +880 1628 504000</div>
-              <div>Email: sabbir.mugda@coe.surbana.tech</div>
-            </div>
-            <div class="ref-relation">Relation: Professional Reference</div>
+            <div class="ref-title">Software Engineer 3</div>
+            <div class="ref-company">Surbana Jurong</div>
+            <div class="ref-line">Phone: +880 1628 504000</div>
+            <div class="ref-line">Email: sabbir.mugda@coe.surbana.tech</div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Page 2 Footer -->
-      <div class="page-footer">
-        <span>MD. Mainul Islam Imon — Curriculum Vitae</span>
-        <span>Page 2 of 2</span>
-      </div>
+    </div>
 
-    </main>
+    <!-- Page 2 Footer -->
+    <footer class="page-footer">
+      <span>MD. Mainul Islam Imon — IT Specialist &amp; System Administrator</span>
+      <span>Page 2 of 2</span>
+    </footer>
   </div>
 
 </div>
