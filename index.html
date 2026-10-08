@@ -6,7 +6,7 @@
   <title>MD. Mainul Islam Imon — IT Specialist & System Administrator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -15,51 +15,56 @@
     }
 
     :root {
-      --primary: #5b52e6;
-      --primary-dark: #473ec7;
-      --primary-light: #ecebfd;
-      --primary-border: #d4d0fa;
-      --dark: #1a1f36;
-      --dark-muted: #3b414f;
-      --body: #4b5563;
-      --body-light: #6b7280;
-      --muted: #8c94a4;
-      --border: #e8ebf1;
-      --border-light: #f0f2f7;
-      --bg-sidebar: #f5f6fa;
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --primary-light: #eef2ff;
+      --primary-border: #c7d2fe;
+      --accent: #6366f1;
+      --dark: #0f172a;
+      --dark-muted: #334155;
+      --body: #334155;
+      --body-light: #475569;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --border-light: #f1f5f9;
+      --bg-sidebar: #f8fafc;
       --bg-card: #ffffff;
-      --bg-card-alt: #f8f9fe;
-      --badge-bg: #ecebfd;
-      --badge-color: #5b52e6;
-      --success: #10b981;
+      --bg-card-alt: #f8faff;
+      --badge-bg: #eef2ff;
+      --badge-color: #4338ca;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #4a4d52;
+      background-color: #334155;
       color: var(--body);
-      font-size: 8.9pt;
-      line-height: 1.44;
+      font-size: 13px;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      padding: 24px 0;
+      padding: 30px 0;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
     }
 
     .cv-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 24px;
+      gap: 30px;
     }
 
     .cv-page {
       width: 210mm;
+      min-height: 297mm;
       height: 297mm;
       max-height: 297mm;
       background: #ffffff;
       display: grid;
-      grid-template-columns: 64mm 146mm;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      grid-template-columns: 68mm 142mm;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
       position: relative;
       overflow: hidden;
       page-break-after: always;
@@ -73,35 +78,36 @@
     /* ================= SIDEBAR ================= */
     .sidebar {
       background-color: var(--bg-sidebar);
-      border-right: 1px solid var(--border);
-      padding: 16px 14px;
+      border-right: 1.5px solid var(--border);
+      padding: 24px 18px;
       display: flex;
       flex-direction: column;
-      gap: 13px;
+      gap: 18px;
       height: 100%;
       overflow: hidden;
     }
 
     /* Photo Banner */
     .photo-banner {
-      background-color: var(--dark);
-      border-radius: 8px;
-      padding: 10px 8px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 12px;
+      padding: 14px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 1px solid #2d3548;
+      border: 1px solid #334155;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
     }
 
     .photo-frame {
-      width: 96px;
-      height: 112px;
-      border-radius: 6px;
-      border: 2px solid rgba(255, 255, 255, 0.95);
+      width: 110px;
+      height: 128px;
+      border-radius: 8px;
+      border: 2.5px solid rgba(255, 255, 255, 0.95);
       overflow: hidden;
-      background: #dbdfec;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+      background: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
 
     .photo-frame img {
@@ -116,27 +122,27 @@
     .sb-section {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 10px;
     }
 
     .sb-title {
-      font-size: 8pt;
+      font-size: 11.5px;
       font-weight: 800;
       letter-spacing: 0.8px;
       text-transform: uppercase;
       color: var(--dark);
       display: flex;
       align-items: center;
-      gap: 5px;
-      padding-bottom: 3.5px;
-      border-bottom: 1.5px solid var(--primary);
+      gap: 7px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--primary);
     }
 
     .sb-title svg {
-      width: 12px;
-      height: 12px;
+      width: 15px;
+      height: 15px;
       stroke: var(--primary);
-      stroke-width: 2.2;
+      stroke-width: 2.3;
       flex-shrink: 0;
     }
 
@@ -144,23 +150,23 @@
     .contact-list {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 8px;
     }
 
     .contact-item {
       display: flex;
       align-items: flex-start;
-      gap: 6px;
-      font-size: 7.5pt;
+      gap: 8px;
+      font-size: 11.5px;
       color: var(--dark-muted);
-      line-height: 1.25;
-      text-decoration: none;
+      line-height: 1.35;
+      font-weight: 500;
       word-break: break-word;
     }
 
     .contact-item svg {
-      width: 11px;
-      height: 11px;
+      width: 14px;
+      height: 14px;
       stroke: var(--primary);
       stroke-width: 2.2;
       margin-top: 1px;
@@ -170,14 +176,18 @@
     .contact-item a {
       color: inherit;
       text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-item a:hover {
+      color: var(--primary);
     }
 
     /* Education Item */
     .edu-item {
       display: flex;
       flex-direction: column;
-      gap: 2px;
-      padding-bottom: 6px;
+      gap: 3px;
+      padding-bottom: 10px;
       border-bottom: 1px dashed var(--border);
     }
 
@@ -187,35 +197,36 @@
     }
 
     .edu-degree {
-      font-size: 7.8pt;
+      font-size: 12px;
       font-weight: 700;
       color: var(--dark);
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
     .edu-inst {
-      font-size: 7.2pt;
-      color: var(--body);
-      line-height: 1.2;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--body-light);
+      line-height: 1.25;
     }
 
     .edu-meta {
-      font-size: 6.8pt;
+      font-size: 10.5px;
       color: var(--muted);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 1px;
     }
 
     .edu-badge {
       display: inline-block;
-      font-size: 6.6pt;
+      font-size: 10px;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--primary-dark);
       background: var(--primary-light);
-      padding: 1.5px 5px;
-      border-radius: 3px;
+      border: 1px solid var(--primary-border);
+      padding: 2px 7px;
+      border-radius: 4px;
       align-self: flex-start;
       margin-top: 2px;
     }
@@ -224,39 +235,38 @@
     .skill-group {
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      margin-bottom: 4px;
+      gap: 5px;
     }
 
     .skill-group-label {
-      font-size: 7pt;
+      font-size: 10.5px;
       font-weight: 700;
       color: var(--primary-dark);
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
     }
 
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 3.5px;
+      gap: 4px;
     }
 
     .skill-pill {
-      font-size: 6.7pt;
-      font-weight: 500;
+      font-size: 10.5px;
+      font-weight: 600;
       color: var(--dark-muted);
       background: #ffffff;
       border: 1px solid var(--border);
-      padding: 1.5px 5.5px;
-      border-radius: 3px;
+      padding: 3px 7px;
+      border-radius: 4px;
       line-height: 1.2;
     }
 
     .skill-pill.highlight {
       background: var(--primary-light);
       color: var(--primary-dark);
-      font-weight: 600;
+      font-weight: 700;
       border-color: var(--primary-border);
     }
 
@@ -264,24 +274,24 @@
     .cert-list {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .cert-item {
       display: flex;
       align-items: flex-start;
-      gap: 6px;
-      font-size: 7.2pt;
-      line-height: 1.22;
+      gap: 7px;
+      font-size: 11px;
+      line-height: 1.3;
       color: var(--dark-muted);
     }
 
     .cert-bullet {
-      width: 4.5px;
-      height: 4.5px;
+      width: 5px;
+      height: 5px;
       background: var(--primary);
       border-radius: 50%;
-      margin-top: 4px;
+      margin-top: 5px;
       flex-shrink: 0;
     }
 
@@ -292,33 +302,34 @@
     }
 
     .cert-issuer {
-      font-size: 6.6pt;
+      font-size: 10px;
       color: var(--muted);
+      font-weight: 500;
     }
 
     /* Competency Badges */
     .badge-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 3.5px;
+      gap: 5px;
     }
 
     .comp-badge {
-      font-size: 6.7pt;
+      font-size: 10.5px;
       font-weight: 600;
-      color: var(--primary);
+      color: var(--primary-dark);
       background: var(--primary-light);
       border: 1px solid var(--primary-border);
-      padding: 2px 5.5px;
-      border-radius: 3px;
+      padding: 3px 8px;
+      border-radius: 4px;
     }
 
     /* ================= MAIN CONTENT ================= */
     .main-content {
-      padding: 18px 18px 14px 18px;
+      padding: 26px 24px 20px 24px;
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 15px;
       height: 100%;
       overflow: hidden;
       background: #ffffff;
@@ -327,29 +338,29 @@
     /* Header */
     .header {
       border-bottom: 2px solid var(--border);
-      padding-bottom: 8px;
+      padding-bottom: 12px;
     }
 
     .header-sub {
-      font-size: 7.5pt;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1px;
+      margin-bottom: 2px;
     }
 
     .header-name {
-      font-size: 20pt;
+      font-size: 27px;
       font-weight: 900;
       color: var(--dark);
-      letter-spacing: -0.3px;
+      letter-spacing: -0.5px;
       line-height: 1.1;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .header-role {
-      font-size: 9.2pt;
+      font-size: 13px;
       font-weight: 800;
       color: var(--primary);
       letter-spacing: 1px;
@@ -360,27 +371,27 @@
     .section {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .section-header {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 8.5pt;
+      gap: 8px;
+      font-size: 12.5px;
       font-weight: 800;
       letter-spacing: 0.8px;
       text-transform: uppercase;
       color: var(--dark);
-      padding-bottom: 3.5px;
+      padding-bottom: 5px;
       border-bottom: 1.5px solid var(--border);
     }
 
     .section-header svg {
-      width: 13px;
-      height: 13px;
+      width: 16px;
+      height: 16px;
       stroke: var(--primary);
-      stroke-width: 2.3;
+      stroke-width: 2.4;
       flex-shrink: 0;
     }
 
@@ -392,8 +403,8 @@
 
     /* Summary Text */
     .summary-text {
-      font-size: 7.8pt;
-      line-height: 1.48;
+      font-size: 12.5px;
+      line-height: 1.6;
       color: var(--body);
       text-align: justify;
     }
@@ -407,14 +418,14 @@
     .glance-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
+      gap: 8px;
     }
 
     .glance-card {
       background: var(--bg-card-alt);
       border: 1px solid var(--primary-border);
-      border-radius: 5px;
-      padding: 5px 6px;
+      border-radius: 8px;
+      padding: 8px 8px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -422,59 +433,60 @@
     }
 
     .glance-num {
-      font-size: 11pt;
+      font-size: 17px;
       font-weight: 900;
       color: var(--primary);
       line-height: 1.1;
     }
 
     .glance-label {
-      font-size: 6.4pt;
-      font-weight: 600;
+      font-size: 9.5px;
+      font-weight: 700;
       color: var(--dark-muted);
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
+      margin-top: 1px;
     }
 
     /* Experience Block */
     .job-block {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .job-head {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 8px;
+      align-items: baseline;
+      gap: 10px;
     }
 
     .job-company {
-      font-size: 9.3pt;
+      font-size: 14.5px;
       font-weight: 800;
       color: var(--dark);
       line-height: 1.2;
     }
 
     .job-location {
-      font-size: 7.2pt;
-      font-weight: 500;
+      font-size: 11px;
+      font-weight: 600;
       color: var(--muted);
     }
 
     .job-roles {
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      margin-top: 2px;
+      gap: 4px;
+      margin-top: 1px;
     }
 
     .role-badge-row {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 7.6pt;
+      gap: 8px;
+      font-size: 12px;
     }
 
     .role-title {
@@ -484,54 +496,56 @@
 
     .role-title.lead {
       color: var(--primary);
+      font-weight: 800;
     }
 
     .role-period {
-      font-size: 6.9pt;
+      font-size: 10.5px;
       color: var(--body-light);
       background: var(--border-light);
-      padding: 1px 5.5px;
-      border-radius: 3px;
-      font-weight: 500;
+      padding: 1.5px 7px;
+      border-radius: 4px;
+      font-weight: 600;
     }
 
     .role-period.current {
       background: var(--primary-light);
       color: var(--primary-dark);
       font-weight: 700;
+      border: 1px solid var(--primary-border);
     }
 
     /* Responsibility Groups */
     .resp-category {
-      margin-top: 2px;
+      margin-top: 3px;
       display: flex;
       flex-direction: column;
-      gap: 3.5px;
+      gap: 4px;
     }
 
     .resp-cat-title {
-      font-size: 7.3pt;
+      font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
       color: var(--primary);
       letter-spacing: 0.4px;
       display: flex;
       align-items: center;
-      gap: 4.5px;
+      gap: 5px;
     }
 
     .resp-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 3.2px;
+      gap: 4.5px;
     }
 
     .resp-list li {
       position: relative;
-      padding-left: 11px;
-      font-size: 7.5pt;
-      line-height: 1.38;
+      padding-left: 14px;
+      font-size: 12px;
+      line-height: 1.48;
       color: var(--body);
       text-align: justify;
     }
@@ -540,11 +554,11 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 5.5px;
-      width: 4.5px;
-      height: 4.5px;
+      top: 6px;
+      width: 5px;
+      height: 5px;
       background: var(--primary);
-      border-radius: 1px;
+      border-radius: 1.5px;
     }
 
     .resp-list li strong {
@@ -556,34 +570,36 @@
     .project-card {
       background: var(--bg-card-alt);
       border: 1px solid var(--border);
-      border-left: 3.5px solid var(--primary);
-      border-radius: 5px;
-      padding: 7px 9px;
-      margin-bottom: 5px;
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
     }
 
     .project-title {
-      font-size: 7.8pt;
+      font-size: 12.5px;
       font-weight: 800;
       color: var(--dark);
       display: flex;
       justify-content: space-between;
-      margin-bottom: 3px;
+      align-items: center;
+      margin-bottom: 4px;
     }
 
     .project-badge {
-      font-size: 6.8pt;
-      color: var(--primary);
+      font-size: 10px;
+      color: var(--primary-dark);
       font-weight: 700;
       background: var(--primary-light);
-      padding: 1px 5px;
-      border-radius: 3px;
+      border: 1px solid var(--primary-border);
+      padding: 1.5px 6px;
+      border-radius: 4px;
     }
 
     .project-desc {
-      font-size: 7.3pt;
+      font-size: 11.5px;
       color: var(--body);
-      line-height: 1.38;
+      line-height: 1.5;
       text-align: justify;
     }
 
@@ -595,48 +611,50 @@
     .ref-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 12px;
     }
 
     .ref-card {
       background: var(--bg-card-alt);
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 8px 10px;
+      border-radius: 8px;
+      padding: 10px 12px;
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
 
     .ref-name {
-      font-size: 8.2pt;
+      font-size: 13px;
       font-weight: 800;
       color: var(--dark);
     }
 
     .ref-role {
-      font-size: 7.3pt;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--primary);
     }
 
     .ref-org {
-      font-size: 7pt;
+      font-size: 11px;
       color: var(--body-light);
+      font-weight: 600;
       margin-bottom: 3px;
     }
 
     .ref-contact {
-      font-size: 6.9pt;
+      font-size: 10.5px;
       color: var(--dark-muted);
-      line-height: 1.28;
+      line-height: 1.35;
+      font-weight: 500;
     }
 
     .ref-relation {
-      font-size: 6.5pt;
+      font-size: 10px;
       font-style: italic;
       color: var(--muted);
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
     /* Page Footer / Numbering */
@@ -645,10 +663,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 6.6pt;
+      font-size: 10px;
       color: var(--muted);
       border-top: 1px solid var(--border-light);
-      padding-top: 3.5px;
+      padding-top: 6px;
+      font-weight: 500;
     }
 
     /* Print Optimization */
@@ -717,7 +736,7 @@
           </div>
           <div class="contact-item">
             <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Mohammadpur, Dhaka-1207, BD</span>
+            <span>Mohammadpur, Dhaka-1207</span>
           </div>
         </div>
       </div>
@@ -730,14 +749,14 @@
         </div>
 
         <div class="skill-group">
-          <div class="skill-group-label">Systems & Virtualization</div>
+          <div class="skill-group-label">Systems &amp; Virtualization</div>
           <div class="skill-tags">
             <span class="skill-pill highlight">Windows Server</span>
-            <span class="skill-pill highlight">Active Directory (GPO)</span>
-            <span class="skill-pill highlight">Linux (RHCSA/RHCE)</span>
+            <span class="skill-pill highlight">Active Directory</span>
+            <span class="skill-pill highlight">Linux (RHCSA)</span>
             <span class="skill-pill">VMware / Hyper-V</span>
-            <span class="skill-pill">Synology NAS Storage</span>
-            <span class="skill-pill">macOS / Windows 11</span>
+            <span class="skill-pill">Synology NAS</span>
+            <span class="skill-pill">macOS &bull; Win 11</span>
           </div>
         </div>
 
@@ -745,34 +764,33 @@
           <div class="skill-group-label">Enterprise Networking</div>
           <div class="skill-tags">
             <span class="skill-pill highlight">MikroTik RouterOS</span>
-            <span class="skill-pill highlight">Cisco Switching (CCNA)</span>
-            <span class="skill-pill">VLAN Segmentation</span>
-            <span class="skill-pill">Edge Firewalls & NAT</span>
-            <span class="skill-pill">ISP Failover & Redundancy</span>
-            <span class="skill-pill">VPN (Site-to-Site/IPsec)</span>
+            <span class="skill-pill highlight">Cisco CCNA</span>
+            <span class="skill-pill">VLAN Routing</span>
+            <span class="skill-pill">Edge Firewalls</span>
+            <span class="skill-pill">ISP Failover</span>
+            <span class="skill-pill">VPN &bull; IPsec</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <div class="skill-group-label">Cloud, SaaS & Workspace</div>
+          <div class="skill-group-label">Cloud &amp; SaaS Workspace</div>
           <div class="skill-tags">
-            <span class="skill-pill highlight">Microsoft 365 Admin</span>
+            <span class="skill-pill highlight">Microsoft 365</span>
             <span class="skill-pill highlight">Google Workspace</span>
-            <span class="skill-pill">DNS, Hosting & SSL</span>
-            <span class="skill-pill">SPF, DKIM & DMARC</span>
-            <span class="skill-pill">Backup & Disaster Recovery</span>
+            <span class="skill-pill">DNS &bull; Hosting &bull; SSL</span>
+            <span class="skill-pill">SPF &bull; DKIM &bull; DMARC</span>
+            <span class="skill-pill">Backup &amp; Recovery</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <div class="skill-group-label">Security, Hardware & Ops</div>
+          <div class="skill-group-label">Security &amp; Operations</div>
           <div class="skill-tags">
             <span class="skill-pill highlight">ZKTeco Biometrics</span>
-            <span class="skill-pill">IP CCTV & NVR/DVR</span>
-            <span class="skill-pill">Endpoint Antivirus</span>
-            <span class="skill-pill">ERP & HRMS Support</span>
-            <span class="skill-pill">IT Asset & AMC Mgmt</span>
-            <span class="skill-pill">PABX / IP-PBX</span>
+            <span class="skill-pill">IP CCTV &bull; NVR</span>
+            <span class="skill-pill">Endpoint Protection</span>
+            <span class="skill-pill">ERP &amp; HRMS Support</span>
+            <span class="skill-pill">Asset &amp; AMC Mgmt</span>
           </div>
         </div>
       </div>
@@ -784,7 +802,7 @@
           Core Competencies
         </div>
         <div class="badge-grid">
-          <span class="comp-badge">IT Team Leadership</span>
+          <span class="comp-badge">IT Leadership</span>
           <span class="comp-badge">Strategic Planning</span>
           <span class="comp-badge">Infrastructure Architecture</span>
           <span class="comp-badge">Vendor Negotiation</span>
@@ -799,8 +817,8 @@
           <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           Languages
         </div>
-        <div style="font-size: 7.2pt; color: var(--dark-muted); line-height: 1.35;">
-          <strong>Bangla</strong> (Native) &bull; <strong>English</strong> (Professional Working Proficiency)
+        <div style="font-size: 11.5px; color: var(--dark-muted); line-height: 1.4; font-weight: 500;">
+          <strong>Bangla</strong> (Native) &bull; <strong>English</strong> (Professional)
         </div>
       </div>
 
@@ -836,7 +854,7 @@
         </div>
         <div class="glance-card">
           <div class="glance-num">3</div>
-          <div class="glance-label">Internal Promotions</div>
+          <div class="glance-label">Promotions</div>
         </div>
         <div class="glance-card">
           <div class="glance-num">7</div>
@@ -844,7 +862,7 @@
         </div>
         <div class="glance-card">
           <div class="glance-num">99.9%</div>
-          <div class="glance-label">Infrastructure Uptime</div>
+          <div class="glance-label">System Uptime</div>
         </div>
       </div>
 
@@ -858,10 +876,8 @@
 
         <div class="job-block">
           <div class="job-head">
-            <div>
-              <div class="job-company">Stencil Bangladesh Ltd. (Asiatic 360)</div>
-              <div class="job-location">Dhaka, Bangladesh &bull; Full-time (5+ Years)</div>
-            </div>
+            <div class="job-company">Stencil Bangladesh Ltd. (Asiatic 360)</div>
+            <div class="job-location">Dhaka, BD &bull; 5+ Years</div>
           </div>
 
           <div class="job-roles">
@@ -882,11 +898,11 @@
           <!-- Sub-categories of Responsibilities -->
           <div class="resp-category">
             <div class="resp-cat-title">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
               Enterprise Infrastructure, Virtualization &amp; Systems
             </div>
             <ul class="resp-list">
-              <li>Architected, deployed, and managed multi-site <strong>Windows Server &amp; Linux (RHEL/CentOS)</strong> environments on VMware/Hyper-V supporting <strong>150+ workstations</strong>.</li>
+              <li>Architected and managed multi-site <strong>Windows Server &amp; Linux (RHEL/CentOS)</strong> environments on VMware/Hyper-V supporting <strong>150+ workstations</strong>.</li>
               <li>Administered Active Directory (AD DS), Group Policy Objects (GPO), DNS/DHCP scopes, and high-availability <strong>Synology NAS</strong> RAID storage arrays with automated multi-tier backup schedules.</li>
               <li>Provided tier-3 escalation resolution across Windows, macOS, and Linux client environments, guaranteeing sub-15-minute response times for critical operations.</li>
             </ul>
@@ -894,7 +910,7 @@
 
           <div class="resp-category">
             <div class="resp-cat-title">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
               Network Engineering &amp; Cyber Security
             </div>
             <ul class="resp-list">
@@ -906,7 +922,7 @@
 
           <div class="resp-category">
             <div class="resp-cat-title">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
               Cloud Administration, Security &amp; Operations
             </div>
             <ul class="resp-list">
@@ -1061,10 +1077,8 @@
 
         <div class="job-block">
           <div class="job-head">
-            <div>
-              <div class="job-company">Ahsania E Solutions (Dhaka Ahsania Mission)</div>
-              <div class="job-location">Dhaka, Bangladesh &bull; Full-time</div>
-            </div>
+            <div class="job-company">Ahsania E Solutions (Dhaka Ahsania Mission)</div>
+            <div class="job-location">Dhaka, BD &bull; Full-time</div>
           </div>
 
           <div class="job-roles">
