@@ -15,10 +15,12 @@
     }
 
     :root {
-      --primary: #1e3a8a;          /* Classic Navy Blue / Corporate */
+      --primary: #1e3a8a;          /* Classic Corporate Navy */
       --primary-dark: #0f172a;     /* Deep Slate */
       --primary-accent: #2563eb;   /* Modern Royal Blue */
       --accent-light: #eff6ff;     /* Soft Blue Tint */
+      --accent-green: #059669;    /* Success Green */
+      --green-light: #ecfdf5;     /* Soft Green Tint */
       --border-color: #cbd5e1;     /* Slate 300 */
       --border-light: #e2e8f0;     /* Slate 200 */
       --text-main: #0f172a;        /* High Contrast Dark */
@@ -32,8 +34,8 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background-color: #475569;
       color: var(--text-body);
-      line-height: 1.48;
-      font-size: 11.3px;
+      line-height: 1.45;
+      font-size: 11.2px;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
       padding: 30px 0;
@@ -57,7 +59,7 @@
       overflow: hidden;
       page-break-after: always;
       page-break-inside: avoid;
-      padding: 30px 38px 22px 38px;
+      padding: 28px 36px 20px 36px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -72,32 +74,32 @@
 
     /* Page-specific body spacing */
     .page-1-body {
-      gap: 10px;
+      gap: 9px;
     }
 
     .page-2-body {
-      gap: 11px;
+      gap: 9px;
     }
 
     .page-3-body {
-      gap: 11px;
+      gap: 9px;
     }
 
     /* Header */
     .header-table {
       width: 100%;
       border-bottom: 2.5px solid var(--primary);
-      padding-bottom: 10px;
-      margin-bottom: 2px;
+      padding-bottom: 9px;
+      margin-bottom: 1px;
     }
 
     .header-left {
       vertical-align: top;
-      width: 76%;
+      width: 77%;
     }
 
     .cv-main-title {
-      font-size: 10.8px;
+      font-size: 10.5px;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -106,7 +108,7 @@
     }
 
     .candidate-name {
-      font-size: 23px;
+      font-size: 22.5px;
       font-weight: 900;
       color: var(--primary-dark);
       letter-spacing: -0.3px;
@@ -115,30 +117,30 @@
     }
 
     .candidate-designation {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--primary-accent);
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      row-gap: 3.5px;
-      column-gap: 14px;
-      font-size: 11px;
+      row-gap: 3px;
+      column-gap: 12px;
+      font-size: 10.8px;
       color: var(--text-body);
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .contact-item svg {
-      width: 13px;
-      height: 13px;
+      width: 12.5px;
+      height: 12.5px;
       color: var(--primary);
       flex-shrink: 0;
     }
@@ -150,19 +152,19 @@
 
     .header-right {
       vertical-align: top;
-      width: 24%;
+      width: 23%;
       text-align: right;
     }
 
     .photo-wrapper {
       display: inline-block;
-      width: 108px;
-      height: 128px;
+      width: 104px;
+      height: 124px;
       border: 2px solid var(--primary);
       padding: 3px;
       background: #ffffff;
       border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     }
 
     .photo-wrapper img {
@@ -175,35 +177,68 @@
 
     /* Section Styling */
     .section-title {
-      font-size: 12px;
+      font-size: 11.8px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: var(--primary-dark);
       background: var(--table-header-bg);
       border-left: 4.5px solid var(--primary);
-      padding: 4.5px 9px;
-      margin-bottom: 6px;
+      padding: 4px 8px;
+      margin-bottom: 5px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
+    /* Career Stats Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-bottom: 2px;
+    }
+
+    .stat-chip {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--primary);
+      padding: 4px 8px;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-num {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--primary-dark);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
     /* Career Objective Box */
     .objective-text {
-      font-size: 11.2px;
-      line-height: 1.5;
+      font-size: 11px;
+      line-height: 1.48;
       color: var(--text-body);
       text-align: justify;
       background: var(--bg-light);
-      padding: 8px 12px;
+      padding: 7px 11px;
       border-left: 3.5px solid var(--primary-accent);
       border-radius: 0 4px 4px 0;
     }
 
     /* Job Card / Organization */
     .org-card {
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .org-header {
@@ -211,18 +246,18 @@
       justify-content: space-between;
       align-items: baseline;
       border-bottom: 1.5px solid var(--border-color);
-      padding-bottom: 3px;
+      padding-bottom: 2.5px;
       margin-bottom: 4px;
     }
 
     .org-name {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 800;
       color: var(--primary-dark);
     }
 
     .org-location-date {
-      font-size: 11.2px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--primary);
     }
@@ -230,47 +265,47 @@
     .role-badge-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 6px;
+      gap: 5px;
+      margin-bottom: 5px;
     }
 
     .role-badge {
       background: var(--accent-light);
       color: var(--primary);
       border: 1px solid #bfdbfe;
-      padding: 2.5px 8px;
+      padding: 2px 7px;
       border-radius: 3px;
-      font-size: 10.8px;
+      font-size: 10.5px;
       font-weight: 700;
     }
 
     .role-badge-current {
-      background: #ecfdf5;
+      background: var(--green-light);
       color: #065f46;
       border: 1px solid #a7f3d0;
-      padding: 2.5px 8px;
+      padding: 2px 7px;
       border-radius: 3px;
-      font-size: 10.8px;
-      font-weight: 700;
+      font-size: 10.5px;
+      font-weight: 800;
     }
 
     .duty-category {
-      margin-bottom: 5.5px;
+      margin-bottom: 4.5px;
     }
 
     .duty-cat-title {
-      font-size: 11.4px;
+      font-size: 11.2px;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 2px;
+      margin-bottom: 1.5px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
 
     .duty-cat-desc {
-      font-size: 11.1px;
-      line-height: 1.46;
+      font-size: 10.9px;
+      line-height: 1.44;
       color: var(--text-body);
       text-align: justify;
     }
@@ -279,16 +314,16 @@
     .data-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 11.1px;
+      font-size: 10.9px;
     }
 
     .data-table th {
       background: var(--table-header-bg);
       color: var(--primary-dark);
       font-weight: 800;
-      font-size: 10.8px;
+      font-size: 10.5px;
       text-align: left;
-      padding: 4.5px 8px;
+      padding: 4px 7px;
       border: 1px solid var(--border-color);
       text-transform: uppercase;
       letter-spacing: 0.3px;
@@ -296,10 +331,10 @@
 
     .data-table td {
       border: 1px solid var(--border-color);
-      padding: 4.5px 8px;
+      padding: 4px 7px;
       vertical-align: middle;
       color: var(--text-body);
-      line-height: 1.36;
+      line-height: 1.34;
     }
 
     .data-table tr:nth-child(even) {
@@ -309,20 +344,38 @@
     .skill-cat-cell {
       font-weight: 700;
       color: var(--primary-dark);
-      width: 28%;
+      width: 27%;
       background: var(--bg-light);
+    }
+
+    /* Technology Tags Grid */
+    .tech-pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 3px;
+    }
+
+    .tech-pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--primary-dark);
+      font-size: 10.2px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 3px;
     }
 
     /* Personal Particulars Table */
     .personal-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 11.1px;
+      font-size: 10.9px;
     }
 
     .personal-table td {
       border: 1px solid var(--border-color);
-      padding: 4px 8px;
+      padding: 3.5px 7px;
       vertical-align: middle;
     }
 
@@ -331,7 +384,7 @@
       background: var(--bg-light);
       font-weight: 700;
       color: var(--text-main);
-      font-size: 11px;
+      font-size: 10.8px;
     }
 
     .p-val {
@@ -343,55 +396,55 @@
     .ref-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
     }
 
     .ref-box {
       border: 1px solid var(--border-color);
       background: var(--bg-light);
       border-top: 3px solid var(--primary);
-      padding: 7px 11px;
+      padding: 6px 10px;
       border-radius: 3px;
     }
 
     .ref-box-name {
-      font-size: 12px;
+      font-size: 11.8px;
       font-weight: 800;
       color: var(--primary-dark);
       margin-bottom: 1px;
     }
 
     .ref-box-desig {
-      font-size: 11.2px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--primary);
     }
 
     .ref-box-org {
-      font-size: 10.8px;
+      font-size: 10.5px;
       font-weight: 600;
       color: var(--text-muted);
       margin-bottom: 2px;
     }
 
     .ref-box-contact {
-      font-size: 10.8px;
+      font-size: 10.5px;
       color: var(--text-body);
-      line-height: 1.35;
+      line-height: 1.32;
     }
 
     /* Declaration */
     .declaration-box {
       border-top: 1px solid var(--border-color);
-      padding-top: 6px;
+      padding-top: 5px;
     }
 
     .declaration-text {
-      font-size: 11px;
-      line-height: 1.4;
+      font-size: 10.8px;
+      line-height: 1.36;
       color: var(--text-body);
       text-align: justify;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       font-style: italic;
     }
 
@@ -399,11 +452,11 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     .sign-col-left {
-      font-size: 11px;
+      font-size: 10.8px;
       color: var(--text-body);
       font-weight: 600;
     }
@@ -413,8 +466,8 @@
     }
 
     .sig-img {
-      height: 40px;
-      max-width: 165px;
+      height: 38px;
+      max-width: 160px;
       object-fit: contain;
       margin-bottom: 2px;
       display: inline-block;
@@ -423,14 +476,14 @@
     .sig-line {
       border-top: 1.5px solid var(--text-main);
       padding-top: 3px;
-      font-size: 11.2px;
+      font-size: 11px;
       font-weight: 800;
       color: var(--primary-dark);
-      min-width: 170px;
+      min-width: 165px;
     }
 
     .sig-sub {
-      font-size: 10.2px;
+      font-size: 10px;
       color: var(--text-muted);
       font-weight: 600;
     }
@@ -438,11 +491,11 @@
     /* Footer */
     .page-footer {
       border-top: 1px solid var(--border-light);
-      padding-top: 5px;
+      padding-top: 4px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 10px;
+      font-size: 9.8px;
       color: var(--text-muted);
       font-weight: 500;
     }
@@ -468,7 +521,7 @@
         width: 210mm !important;
         height: 297mm !important;
         max-height: 297mm !important;
-        padding: 26px 36px 18px 36px !important;
+        padding: 24px 34px 16px 34px !important;
       }
     }
 
@@ -523,11 +576,31 @@
         </tr>
       </table>
 
+      <!-- At a Glance Stats -->
+      <div class="stats-bar">
+        <div class="stat-chip">
+          <span class="stat-num">7+ Years</span>
+          <span class="stat-label">Enterprise Experience</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-num">4 Roles</span>
+          <span class="stat-label">Career Progression</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-num">7 Certs</span>
+          <span class="stat-label">Verified Qualifications</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-num">3 Firms</span>
+          <span class="stat-label">Corporate &amp; Retail</span>
+        </div>
+      </div>
+
       <!-- Career Objective -->
       <div>
-        <div class="section-title">Career Objective & Executive Summary</div>
+        <div class="section-title">Career Objective &amp; Executive Summary</div>
         <p class="objective-text">
-          Dedicated, proactive, and results-oriented <strong>Senior Executive — Maintenance &amp; IT Specialist</strong> with <strong>7+ years of progressive enterprise experience</strong> in planning, managing, repairing, and securing mission-critical IT infrastructure, facility maintenance, network operations, and retail/commercial systems. Currently serving as <strong>Senior Executive — Maintenance at Shopping Zone BD</strong>. Possesses a proven record across progressive roles including Assistant Manager — IT at Stencil Bangladesh Ltd. (Asiatic 360). Seeking to leverage deep expertise in preventive hardware maintenance, server management, MikroTik/Cisco networks, POS and barcode hardware, biometric ERP integration, and vendor management to maximize system reliability and organizational uptime.
+          Proactive, results-oriented, and versatile <strong>Senior Executive — Maintenance &amp; IT Specialist</strong> with <strong>7+ years of progressive enterprise experience</strong> in planning, deploying, servicing, and securing high-availability IT systems, corporate networks, and commercial retail facilities. Currently serving as <strong>Senior Executive — Maintenance at Shopping Zone BD</strong>, with a distinguished track record advancing across 3 progressive roles up to <strong>Assistant Manager — IT at Stencil Bangladesh Ltd. (Asiatic 360)</strong>. Seeking to deliver operational excellence through expert preventive maintenance, Windows/Linux server administration, MikroTik/Cisco networking, POS/barcode hardware reliability, biometric ERP integration, and vendor lifecycle management.
         </p>
       </div>
 
@@ -536,7 +609,7 @@
         <div class="section-title">Employment History / Work Experience</div>
         
         <!-- Company 1: Shopping Zone BD (Current) -->
-        <div class="org-card" style="margin-bottom: 6px;">
+        <div class="org-card" style="margin-bottom: 5px;">
           <div class="org-header">
             <div>
               <span class="org-name">Shopping Zone BD</span>
@@ -548,16 +621,16 @@
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">1. IT, Hardware & Retail Facility Maintenance:</div>
+            <div class="duty-cat-title">1. IT Systems, Retail POS & Hardware Maintenance:</div>
             <div class="duty-cat-desc">
-              Leading comprehensive hardware maintenance, preventive servicing, diagnosing, and repairing of desktop workstations, laptops, POS billing terminals, barcode/label printers, thermal receipt printers, and scanners. Ensuring seamless technical uptime for retail outlets, warehouse hubs, and central headquarters.
+              Directing preventive maintenance, diagnosing, assembling, and repairing desktop workstations, laptops, POS billing terminals, thermal receipt printers, and barcode/label printers across retail outlets, dispatch hubs, and corporate HQ.
             </div>
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">2. Network Operations, Power Backup & Security Surveillance:</div>
+            <div class="duty-cat-title">2. Network Uptime, Power Stability & Security Surveillance:</div>
             <div class="duty-cat-desc">
-              Managing network infrastructure (MikroTik routers, Wi-Fi access points, switches), online UPS backup power balancing, and electrical stability. Overseeing IP CCTV cameras, DVR/NVR surveillance grids, and ZKTeco biometric time-attendance devices. Coordinating with vendors for spare parts procurement and AMCs.
+              Ensuring 99.9% network uptime across MikroTik routers, Cisco switches, and Wi-Fi Access Points. Overseeing online UPS load balancing, IP CCTV cameras, NVR/DVR surveillance grids, ZKTeco biometric time-attendance devices, and spare parts stores.
             </div>
           </div>
         </div>
@@ -577,16 +650,16 @@
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">1. Diagnosing, Troubleshooting & OS Support:</div>
+            <div class="duty-cat-title">1. Diagnosing, Hardware & Level-3 Desktop/OS Support:</div>
             <div class="duty-cat-desc">
-              Provided Level-3 desktop/laptop support, anti-virus server management, network troubleshooting, internet connectivity, and email administration. Prompt problem-solving over phone and remote assistance. Managed backups, system security, hardware diagnostics, and configured OS (Windows 10/11, Linux, macOS).
+              Delivered tier-3 troubleshooting for enterprise desktop/laptop hardware, OS platforms (Windows 10/11, Linux, macOS), antivirus server deployment, data communication, and prompt problem-solving over phone and remote assistance.
             </div>
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">2. Installation, Configuration & System Deployments:</div>
+            <div class="duty-cat-title">2. Installation, Configuration & Email Tenant Administration:</div>
             <div class="duty-cat-desc">
-              Configured email via MS Outlook and Google Workspace. Managed LAN, WAN, VLANs, MikroTik routers, and Cisco switches. Serviced and supported network printers, heavy-duty laser printers, and scanners. Configured Wi-Fi APs, NVR/DVR/XVR, CCTV cameras, projectors, and Windows/Linux server platforms.
+              Configured enterprise email accounts on Microsoft Outlook, Exchange, and Google Workspace. Managed LAN, WAN, VLANs, MikroTik RouterOS, and Cisco managed switches. Installed and serviced network printers, scanners, and projectors.
             </div>
           </div>
         </div>
@@ -610,35 +683,35 @@
 
       <!-- Employment Continued & Ahsania -->
       <div>
-        <div class="section-title">Employment History (Continued) & IT Projects</div>
+        <div class="section-title">Employment History (Continued) &amp; Enterprise IT Projects</div>
 
         <!-- Asiatic Duties 3, 4, 5 & 6 -->
-        <div class="org-card" style="margin-bottom: 7px;">
+        <div class="org-card" style="margin-bottom: 6px;">
           <div class="duty-category">
             <div class="duty-cat-title">3. Repair, Servicing & Preventative Maintenance (Stencil Bangladesh Ltd.):</div>
             <div class="duty-cat-desc">
-              Repaired, assembled, and replaced damaged hardware components (Desktop/Laptop Level-3 maintenance). Maintained and serviced peripheral devices (Laser/Inkjet printers, scanners, monitors, online UPS systems). Executed periodic system upgrades and preventive maintenance.
+              Repaired, assembled, and replaced damaged hardware components (Desktop/Laptop Level-3 servicing). Serviced peripheral devices (Heavy-duty Laser/Inkjet printers, scanners, monitors, online UPS). Enforced zero hardware downtime.
             </div>
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">4. Technical, ERP, HRM & Payroll Systems Support:</div>
+            <div class="duty-cat-title">4. ERP, HRM & Biometric Attendance Systems Support:</div>
             <div class="duty-cat-desc">
-              Provided comprehensive on-site and remote technical support for ERP, HRM, and Payroll software modules. Managed ZKTeco biometric attendance synchronization, payment logs, and user access records. Set up credentials, emails, and Zoom/Teams video conferencing systems.
+              Provided on-site and remote support for ERP, HRM, and Payroll modules. Managed ZKTeco biometric time-attendance synchronization, payment logs, and user access. Set up Zoom/Teams conference rooms and conducted user IT training.
             </div>
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">5. Documentation, Inventory & Reporting:</div>
+            <div class="duty-cat-title">5. IT Asset Management, Inventory Store & HOD Reporting:</div>
             <div class="duty-cat-desc">
-              Managed service-related spare parts inventory store, IT asset tagging, software license compliance, and vendor quotation evaluation for hardware procurement. Prepared Daily, Weekly, and Monthly IT Operations and Maintenance Reports to the Department HOD.
+              Managed service-related spare parts inventory, IT asset tagging, software license compliance, and vendor quotation evaluation. Prepared Daily, Weekly, and Monthly IT Operations and Maintenance Reports to the Department HOD.
             </div>
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">6. IT Infrastructure Setup & Office Relocation Projects:</div>
+            <div class="duty-cat-title">6. Office Shifting, Server Room Staging & Fiber Cabling:</div>
             <div class="duty-cat-desc">
-              Spearheaded corporate office IT relocation: planned structured CAT6/Fiber cabling matrices, server rack staging, online UPS power balancing, patch panel terminations, and ISP leased-line failover with zero downtime and zero data loss.
+              Spearheaded corporate office IT relocation: planned structured CAT6/Fiber cabling layouts, server rack staging, online UPS power balancing, patch panel terminations, and ISP leased-line failover with zero downtime.
             </div>
           </div>
         </div>
@@ -656,16 +729,16 @@
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">1. Strategic IT & Infrastructure Operations:</div>
+            <div class="duty-cat-title">1. Strategic IT, Server & Network Operations:</div>
             <div class="duty-cat-desc">
               Administered Windows Server and Linux Server platforms, Active Directory user access rights, and GPO policies. Configured and managed MikroTik routers, bandwidth queues, VPN connectivity, and office-wide Wi-Fi infrastructure.
             </div>
           </div>
 
           <div class="duty-category">
-            <div class="duty-cat-title">2. Surveillance, Security & Technical Helpdesk:</div>
+            <div class="duty-cat-title">2. Surveillance, Data Backup & Helpdesk Support:</div>
             <div class="duty-cat-desc">
-              Monitored and maintained CCTV surveillance and ZKTeco biometric time-attendance devices. Executed daily data backup protocols. Provided multi-tier desktop/laptop hardware and software troubleshooting across all departments.
+              Monitored CCTV surveillance and ZKTeco biometric devices. Executed daily data backup protocols and disaster recovery plans. Provided multi-tier desktop/laptop hardware and software troubleshooting across all departments.
             </div>
           </div>
         </div>
@@ -673,29 +746,47 @@
 
       <!-- Technical Skills Matrix -->
       <div>
-        <div class="section-title">Technical Skills & Area of Expertise</div>
+        <div class="section-title">Technical Skills &amp; Area of Expertise</div>
         <table class="data-table">
           <tr>
-            <td class="skill-cat-cell">Operating Systems & Servers</td>
+            <td class="skill-cat-cell">Operating Systems &amp; Servers</td>
             <td>Windows Server (2016-2022), Linux (RHEL, CentOS, Ubuntu), VMware ESXi, Hyper-V, Synology NAS DSM, macOS.</td>
           </tr>
           <tr>
-            <td class="skill-cat-cell">Networking & Security</td>
+            <td class="skill-cat-cell">Networking &amp; Security</td>
             <td>MikroTik RouterOS (MTCNA), Cisco Switches (CCNA), VLAN, Routing, Firewall, Bandwidth Management, Dual-ISP Failover, VPNs.</td>
           </tr>
           <tr>
-            <td class="skill-cat-cell">Directory, Cloud & Mail</td>
+            <td class="skill-cat-cell">Directory, Cloud &amp; Mail</td>
             <td>Active Directory (AD DS, GPO, DNS, DHCP), Microsoft 365, Google Workspace, Domain, Web Hosting, SSL, Mail Security (SPF, DKIM, DMARC).</td>
           </tr>
           <tr>
-            <td class="skill-cat-cell">Maintenance & Hardware</td>
+            <td class="skill-cat-cell">Maintenance &amp; Hardware</td>
             <td>Level-3 Desktop/Laptop Repair, POS Terminals, Barcode/Label Printers, Thermal Printers, ZKTeco Biometrics, CCTV (IP/NVR/DVR).</td>
           </tr>
           <tr>
-            <td class="skill-cat-cell">Software & IT Management</td>
-            <td>ERP/HRM & Payroll Software Support, IT Asset Tagging & Inventory, Spare Parts Store, Vendor AMCs, SOPs, HOD Reporting.</td>
+            <td class="skill-cat-cell">Software &amp; IT Governance</td>
+            <td>ERP/HRM &amp; Payroll Software Support, IT Asset Tagging &amp; Inventory, Spare Parts Store, Vendor AMCs, SOPs, HOD Reporting.</td>
           </tr>
         </table>
+
+        <!-- Tech Chips Grid -->
+        <div class="tech-pill-grid">
+          <span class="tech-pill">Windows Server</span>
+          <span class="tech-pill">Red Hat / Ubuntu</span>
+          <span class="tech-pill">MikroTik RouterOS</span>
+          <span class="tech-pill">Cisco IOS</span>
+          <span class="tech-pill">Active Directory</span>
+          <span class="tech-pill">Microsoft 365</span>
+          <span class="tech-pill">Google Workspace</span>
+          <span class="tech-pill">VMware ESXi</span>
+          <span class="tech-pill">Synology NAS</span>
+          <span class="tech-pill">ZKTeco Biometrics</span>
+          <span class="tech-pill">IP CCTV / NVR</span>
+          <span class="tech-pill">POS &amp; Thermal Printers</span>
+          <span class="tech-pill">Online UPS</span>
+          <span class="tech-pill">CAT6 &amp; Fiber Cabling</span>
+        </div>
       </div>
 
     </div>
@@ -729,7 +820,7 @@
           <tbody>
             <tr>
               <td><strong>B.Sc. in Engineering</strong></td>
-              <td>Computer Science & Eng.</td>
+              <td>Computer Science &amp; Eng.</td>
               <td>Bangladesh University</td>
               <td style="text-align: center;">2026 (Exp.)</td>
               <td style="text-align: center;"><strong>CGPA 3.52</strong></td>
@@ -754,7 +845,7 @@
 
       <!-- Professional Training & Certifications -->
       <div>
-        <div class="section-title">Professional Training & Certifications</div>
+        <div class="section-title">Professional Training &amp; Certifications</div>
         <table class="data-table">
           <thead>
             <tr>
@@ -780,7 +871,7 @@
               <td>Dhanmondi, Dhaka</td>
             </tr>
             <tr>
-              <td><strong>Red Hat Linux Administration (RHCSA & RHCE)</strong></td>
+              <td><strong>Red Hat Linux Administration (RHCSA &amp; RHCE)</strong></td>
               <td>CSL Training</td>
               <td>Lalmatia, Dhaka</td>
             </tr>
@@ -790,13 +881,13 @@
               <td>Lalmatia, Dhaka</td>
             </tr>
             <tr>
-              <td><strong>CCNA — Routing & Switching</strong></td>
+              <td><strong>CCNA — Routing &amp; Switching</strong></td>
               <td>CSL Training</td>
               <td>Lalmatia, Dhaka</td>
             </tr>
             <tr>
               <td><strong>Basic / Computer Networking</strong></td>
-              <td>Global Information & Technology (GIT)</td>
+              <td>Global Information &amp; Technology (GIT)</td>
               <td>Mirpur, Dhaka</td>
             </tr>
           </tbody>
@@ -848,7 +939,7 @@
 
       <!-- References & Declaration -->
       <div>
-        <div class="section-title">References & Declaration</div>
+        <div class="section-title">References &amp; Declaration</div>
         
         <div class="ref-container">
           <div class="ref-box">
@@ -857,7 +948,7 @@
             <div class="ref-box-org">SIL International Bangladesh</div>
             <div class="ref-box-contact">
               Mobile: +880 1768 174341<br />
-              Email: apu_zisan@sil.org
+              Email: apu_zisan@sil.org &nbsp;|&nbsp; Relation: Professional Reference
             </div>
           </div>
 
@@ -867,7 +958,7 @@
             <div class="ref-box-org">Surbana Jurong</div>
             <div class="ref-box-contact">
               Mobile: +880 1628 504000<br />
-              Email: sabbir.mugda@coe.surbana.tech
+              Email: sabbir.mugda@coe.surbana.tech &nbsp;|&nbsp; Relation: Professional Reference
             </div>
           </div>
         </div>
